@@ -1,0 +1,31 @@
+info:
+  name: task update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base}}/projects/25/project-planning/tasks/18"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"weightage\":197,\r
+
+      \    \"planned_start_date\":\"2025-06-01\",\r
+
+      \    \"planned_end_date\":\"2025-06-30\",\r
+
+      \    \"assigned_engineer\":1\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

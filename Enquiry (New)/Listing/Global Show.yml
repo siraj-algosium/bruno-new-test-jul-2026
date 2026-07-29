@@ -1,0 +1,21 @@
+info:
+  name: Global Show
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{base}}/enquiries/218/global-show"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

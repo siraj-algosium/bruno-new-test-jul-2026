@@ -1,0 +1,7 @@
+info:
+  name: Item Makes and model
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

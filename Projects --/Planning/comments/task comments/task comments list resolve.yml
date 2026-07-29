@@ -1,0 +1,21 @@
+info:
+  name: task comments list resolve
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/projects/25/project-planning/tasks/5/comments/resolve"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

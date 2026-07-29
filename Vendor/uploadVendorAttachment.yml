@@ -1,0 +1,23 @@
+info:
+  name: uploadVendorAttachment
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/uploadVendorAttachment"
+  body:
+    type: multipart-form
+    data:
+      - name: attachments
+        type: file
+        value: []
+  auth:
+    type: bearer
+    token: 637|nfV723iJO1m31vFTeyBqt9UqBsMDhiDAABX2eQl6c7d491bc
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

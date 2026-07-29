@@ -1,0 +1,18 @@
+info:
+  name: Delete Transfer Item
+  type: http
+  seq: 9
+
+http:
+  method: DELETE
+  url: "{{base}}/inventory-location-transfers/1/items/2"
+  headers:
+    - name: Branch
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

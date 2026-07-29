@@ -1,0 +1,7 @@
+info:
+  name: Task manager
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

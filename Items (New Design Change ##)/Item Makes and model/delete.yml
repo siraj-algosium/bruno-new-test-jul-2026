@@ -1,0 +1,18 @@
+info:
+  name: delete
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{base1}}/items/146/makes/2"
+  headers:
+    - name: Branch
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

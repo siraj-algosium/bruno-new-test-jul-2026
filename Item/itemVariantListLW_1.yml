@@ -1,0 +1,34 @@
+info:
+  name: itemVariantListLW_1
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{base}}/itemVariantListLW/116?page=1"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: search_text
+      value: RED
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \  \"attribute\": {\r
+
+      \    \"87\": 212\r
+
+      \  }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

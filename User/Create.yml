@@ -1,0 +1,57 @@
+info:
+  name: Create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/users?name=test user&email=testuser1@test.com1&password=123&mobile=12567&extension=12&designation=4&department=1&username=usernametest1"
+  headers:
+    - name: branch
+      value: "1"
+  params:
+    - name: name
+      value: test user
+      type: query
+    - name: email
+      value: testuser1@test.com1
+      type: query
+    - name: password
+      value: "123"
+      type: query
+    - name: mobile
+      value: "12567"
+      type: query
+    - name: extension
+      value: "12"
+      type: query
+    - name: designation
+      value: "4"
+      type: query
+    - name: department
+      value: "1"
+      type: query
+    - name: username
+      value: usernametest1
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+          "name":"tt1",
+          "email":"rr15@tt.com",
+          "password":"123",
+          "designation":4,
+          "username":"uu15",
+          "branch_list":[1,2]
+
+      }
+  auth:
+    type: bearer
+    token: 1344|G8IPsB1jctpK3IQMxaj6Pv7knXd17EQoYKFlZGNqde37bdfb
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

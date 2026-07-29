@@ -1,0 +1,27 @@
+info:
+  name: show
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/boq-sale/items/5/comments"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":420,\r
+
+      \    \"estimation_boq_sale_id\":4\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

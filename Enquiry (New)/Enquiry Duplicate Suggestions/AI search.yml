@@ -1,0 +1,54 @@
+info:
+  name: AI search
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://fastapi-datnext-dev.algosium.com/search
+  headers:
+    - name: Branch
+      value: "1"
+  params:
+    - name: getAll
+      value: "true"
+      type: query
+      disabled: true
+    - name: name
+      value: co
+      type: query
+      disabled: true
+    - name: code
+      value: PC
+      type: query
+      disabled: true
+    - name: created_at_start
+      value: 2024-11-14
+      type: query
+      disabled: true
+    - name: created_at_end
+      value: 2024-11-15
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "title": "mmm",
+        "min_score_pct": 60
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

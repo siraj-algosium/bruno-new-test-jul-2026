@@ -1,0 +1,25 @@
+info:
+  name: Update Activity Status
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base}}/projects/31/task-manager/activities/1/change-status"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "planning_subtask_id":1,
+          "status":"completed" //not_started, in_progress
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

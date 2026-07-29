@@ -1,0 +1,21 @@
+info:
+  name: update-client-review
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/projects/31/project-planning/update-client-review"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"is_reviewed\" : false\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

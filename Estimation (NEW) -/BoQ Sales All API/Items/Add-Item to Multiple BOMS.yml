@@ -1,0 +1,41 @@
+info:
+  name: Add-Item to Multiple BOMS
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/boq-sale/boms/add-item"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\": 14,\r
+
+      \    \"estimation_boq_sale_id\": 8,\r
+
+      \    \"item_id\": 5,\r
+
+      \    \"item_variant_id\": 9,\r
+
+      \    \"boq_sale_bom_ids\": [\r
+
+      \        16,\r
+
+      \        17\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

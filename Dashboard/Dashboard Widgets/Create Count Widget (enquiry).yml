@@ -1,0 +1,32 @@
+info:
+  name: Create Count Widget (enquiry)
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/dashboard/widgets"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: branch
+      value: "{{branch_id}}"
+  body:
+    type: json
+    data: |-
+      {
+        "fe_widget_id": "1",
+        "module_key": "enquiry",
+        "saved_filter_id": 2,
+        "widget_type": "count",
+        "title": "Total Matching Records"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

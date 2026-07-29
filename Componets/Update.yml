@@ -1,0 +1,38 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/components/1"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"cffff",
+          "tags":"cmp-tag",
+          "description":"ddd",
+          "attributes_arr":[
+              {
+                  "attribute_id":1,
+                  "show_when":{
+                      "and":[
+                          {
+                              "1":10
+                          }
+                      ]
+                  }
+              }
+              
+          ]
+      }
+  auth:
+    type: bearer
+    token: 1947|dqsyTX8qniPHJfr1bEGITdnJOTCgF489EW0FzQrNe3419d4a
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

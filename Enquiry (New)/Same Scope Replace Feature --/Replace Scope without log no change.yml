@@ -1,0 +1,29 @@
+info:
+  name: Replace Scope without log no change
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/replace-scope"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"enquiry_id\" : 40729,\r
+
+      \    \"old_scope_id\" : 10525,\r
+
+      \    \"new_scope_ids\": [10309, 10525, 444444]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

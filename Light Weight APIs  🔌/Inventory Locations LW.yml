@@ -1,0 +1,46 @@
+info:
+  name: Inventory Locations LW
+  type: http
+  seq: 14
+
+http:
+  method: GET
+  url: "{{base}}/inventoryLocationsLW?type=zone"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: exclude_ids
+      value: "17"
+      type: query
+      description: pass the enquiry id here
+      disabled: true
+    - name: name
+      value: Z1
+      type: query
+      disabled: true
+    - name: per_page
+      value: "5"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: name_field_source
+      value: location_id
+      type: query
+      disabled: true
+    - name: type
+      value: zone
+      type: query
+      description: warehouse|zone|rack|shelf|bin
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

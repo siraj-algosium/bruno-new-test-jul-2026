@@ -1,0 +1,30 @@
+info:
+  name: delete
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{base}}/client/1"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "contact_number" : "1231231231",
+          "email_address" : "asd@d.asd",
+          "isActive" : "true",
+          "registration_date" : "2025-04-11",
+          "client_address" : "asd",
+          "client_country" : 82,
+          "client_name" : "asd"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

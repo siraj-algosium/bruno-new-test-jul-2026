@@ -1,0 +1,27 @@
+info:
+  name: Update Main Task
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base}}/project-master/main-tasks/1"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Main Task 1ddd\",\r
+
+      \    \"weightage\":\"20\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,33 @@
+info:
+  name: Item - Variant and Qty Update
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/boms/13/items/save-item"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"bom_item_id\":6,\r
+
+      \    \"item_id\":1,\r
+
+      \    \"item_variant_id\":2,\r
+
+      \    \"quantity\":300,\r
+
+      \    \"description\":\"dddd\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

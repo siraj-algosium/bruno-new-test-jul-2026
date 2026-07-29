@@ -1,0 +1,21 @@
+info:
+  name: store vendors
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{base}}/vendors/save"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"name\":\"scsc\"\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

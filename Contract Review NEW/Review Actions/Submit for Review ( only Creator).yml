@@ -1,0 +1,18 @@
+info:
+  name: Submit for Review ( only Creator)
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{base}}/contract-reviews/3752/submit-for-review"
+  headers:
+    - name: Branch
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

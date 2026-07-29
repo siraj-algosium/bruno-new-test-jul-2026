@@ -1,0 +1,27 @@
+info:
+  name: comments list
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{base}}/project_design_request/3/attachments/5/comments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"attachment\":5,\r
+
+      \    \"comment\": \"asd asd asd asd asd asd.\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,60 @@
+info:
+  name: Update - Save
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/contract-reviews/3752"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "awarded_date": "2025-07-12",
+          "po_value": "8012.00",
+          "po_currency_id": "6",
+          "project_manager": 2,
+          "startDate": "2025-07-11",
+          "endDate": "2025-07-11",
+          "deliveryDate": "2025-07-24",
+          "contractReviewActions": [
+              {
+                  "reqAction": "test 1",
+                  "toBeDoneBy": "1",
+                  "status": "completed",
+                  "id": "81"
+              }
+          ],
+          "remarks": null,
+          "poNumber": "5555",
+          "paymentTerms": "Credit",
+          "paymentDays": 109,
+          "deliveryTerms": "DDP",
+          "loiNo": "5555555",
+          "other": null,
+
+          "revFullfillProject": "yes",
+          "revDiffTenderOrder": "yes",
+          "revDocumentClient": "yes",
+          "revRequirementResolved": "yes",
+          "revCommTenderOrder": "yes",
+          "insWorkComp": "yes",
+          "insMotorLiab": "yes",
+          "insProfIndem": "yes",
+          "insGenTplCar": "yes",
+          "bankAdvPay": "yes",
+          "bankPerfGrnty": "yes",
+          "bankWrtyGrnty": "yes",
+          "bankKycReq": "yes",
+          "bankCreditApp": "yes"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

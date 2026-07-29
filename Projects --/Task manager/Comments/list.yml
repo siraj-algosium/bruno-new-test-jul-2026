@@ -1,0 +1,30 @@
+info:
+  name: list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/projects/31/task-manager/activities/1/comments"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: page
+      value: "5"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "2"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

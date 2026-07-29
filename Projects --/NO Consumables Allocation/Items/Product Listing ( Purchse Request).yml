@@ -1,0 +1,50 @@
+info:
+  name: Product Listing ( Purchse Request)
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/projects/2/purchase-request/2/consumable-allocation/products?comments=resolved"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: code
+      value: "2"
+      type: query
+      disabled: true
+    - name: name
+      value: Product Z
+      type: query
+      disabled: true
+    - name: description
+      value: 2 p
+      type: query
+      disabled: true
+    - name: structure_name
+      value: te
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "1"
+      type: query
+      disabled: true
+    - name: comments
+      value: resolved
+      type: query
+      description: all, resolved , unresolved
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

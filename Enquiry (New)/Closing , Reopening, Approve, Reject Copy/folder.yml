@@ -1,0 +1,7 @@
+info:
+  name: Closing , Reopening, Approve, Reject Copy
+  type: folder
+  seq: 8
+
+request:
+  auth: inherit

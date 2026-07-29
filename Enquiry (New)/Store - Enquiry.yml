@@ -1,0 +1,51 @@
+info:
+  name: Store - Enquiry
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{base}}/enquiries"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+        "is_eoi":false,
+        "enquiry_type": 1,
+        "log_category": 1,
+        "priority": 1,
+        "approver":1,
+
+        "customer_id": 1,
+        "client_id": 1,
+        "customer_reference": "ddddd0",
+        "customer_contacts":[1,2],
+
+        "project_title": "tests3",
+        "tender_no": "ddddd0",
+        "description": "ddddd",
+        "country_code": 2, //optional
+        "region": "dafa", //optional
+
+        "received_date": "2025-04-28",
+        "last_date": "2025-04-30",
+        "next_followup_date": "2025-05-01",//optional
+        "follow_up_person": 35,//optional
+
+        "estimation_coordinator": 1,
+        "proposal_engineer": 1,
+        "sales_engineer": 1,
+        
+        "remarks": "rdddr",//optional
+        "attachments":null //optional
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

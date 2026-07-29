@@ -1,0 +1,21 @@
+info:
+  name: delete comments
+  type: http
+  seq: 17
+
+http:
+  method: DELETE
+  url: "{{base}}/rfq/9/quotation/comments/3"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

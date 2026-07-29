@@ -1,0 +1,49 @@
+info:
+  name: Create/ Update Attribute
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/bom-attributes"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"Radio Button\",\r
+
+      \    \"description\": \"test\",\r
+
+      \    \"field_type\": \"radio\",\r
+
+      \    \"value_arr\": [\r
+
+      \        {\r
+
+      \            \"value\": \"RED\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"value\": \"BLUE\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"show_name_in_description\":false,\r
+
+      \    \"code\":\"P\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,57 @@
+info:
+  name: Purchase Requests - All
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/projects/material-booking-purchase-requests?status=queued"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: sortCol
+      value: project_code
+      type: query
+      disabled: true
+    - name: sortOrder
+      value: desc
+      type: query
+      disabled: true
+    - name: per_page
+      value: "2"
+      type: query
+      disabled: true
+    - name: status
+      value: queued
+      type: query
+      description: |
+        queued
+        initiated
+        completed
+    - name: material_booking_code
+      value: "3"
+      type: query
+      disabled: true
+    - name: purchase_request_code
+      value: "4"
+      type: query
+      disabled: true
+    - name: project_code
+      value: "0001"
+      type: query
+      disabled: true
+    - name: project_title
+      value: "1"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

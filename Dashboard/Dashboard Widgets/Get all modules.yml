@@ -1,0 +1,22 @@
+info:
+  name: Get all modules
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base}}/dashboard/widgets/modules"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: branch
+      value: "{{branch_id}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

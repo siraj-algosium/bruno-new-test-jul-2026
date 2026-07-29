@@ -1,0 +1,21 @@
+info:
+  name: task comments
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/projects/29/project-planning/tasks/43/comments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"comment\": \"asdsad\"\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

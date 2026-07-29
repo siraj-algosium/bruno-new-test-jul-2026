@@ -1,0 +1,38 @@
+info:
+  name: Rivision List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/projects/24/project-planning/revisions"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: per_page
+      value: "1"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: sort_col
+      value: status
+      type: query
+      disabled: true
+    - name: sort_order
+      value: desc
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

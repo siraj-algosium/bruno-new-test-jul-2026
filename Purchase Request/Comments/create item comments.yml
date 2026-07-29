@@ -1,0 +1,25 @@
+info:
+  name: create item comments
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/1/items/370/comments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\":\"hi test comment 123\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

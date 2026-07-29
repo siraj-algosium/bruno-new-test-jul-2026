@@ -1,0 +1,20 @@
+info:
+  name: Forward to Approver ( From Reviewer)
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/projects/1/purchase-request/1/consumable-allocation/forward-to-approver"
+  headers:
+    - name: Branch
+      value: "1"
+  auth:
+    type: bearer
+    token: 180|hpoWc8VrZUrg7byGfz1szUcrslCvMTIcbKAr9fwad404a6dd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

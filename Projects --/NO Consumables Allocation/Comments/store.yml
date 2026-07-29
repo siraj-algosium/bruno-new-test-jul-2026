@@ -1,0 +1,25 @@
+info:
+  name: store
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/2/consumable-allocation/products/165/comments"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\":\"second Review Comment\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

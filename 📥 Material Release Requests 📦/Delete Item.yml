@@ -1,0 +1,18 @@
+info:
+  name: Delete Item
+  type: http
+  seq: 12
+
+http:
+  method: DELETE
+  url: "{{base}}/material-release-requests/1/items/2"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,27 @@
+info:
+  name: comment
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/project_design_request/3/attachments/5/comments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"attachment\":5,\r
+
+      \    \"comment\": \"sss sss sss ssss 1.\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

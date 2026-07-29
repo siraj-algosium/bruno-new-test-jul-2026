@@ -1,0 +1,67 @@
+info:
+  name: create
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base}}/rfq/9/quotation"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"vendor_id\": 44,\r
+
+      \    \"delivery_term_id\":1,\r
+
+      \    \"payment_term_id\":3,\r
+
+      \    \"currency_id\":1,\r
+
+      \    \"fob_charges\":22,\r
+
+      \    \"sea_freight\":10.44,\r
+
+      \    \"customs_duty\":30.44,\r
+
+      \    \"customes_clearance_charges\":123.44,\r
+
+      \    \"local_transportation_charges\":456.44,\r
+
+      \    \"delivery_time\":\"about 10 days\",\r
+
+      \    \"availability\":\"test 123\",\r
+
+      \    \"remarks\":\"super 123\",\r
+
+      \    \"items\":[\r
+
+      \        {\"id\":65, \"unit_price\":100.3},\r
+
+      \        {\"id\":66, \"unit_price\":100.3},\r
+
+      \        {\"id\":67, \"unit_price\":100.44},\r
+
+      \        {\"id\":68, \"unit_price\":100.44},\r
+
+      \        {\"id\":69, \"unit_price\":100.44},\r
+
+      \        {\"id\":70, \"unit_price\":100.44},\r
+
+      \        {\"id\":71, \"unit_price\":100.44}\r
+
+      \    ],\r
+
+      \    \"port_of_shipment\" :\"kochi\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

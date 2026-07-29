@@ -1,0 +1,31 @@
+info:
+  name: upload file
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/contract-reviews/80/attachments"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: multipart-form
+    data:
+      - name: attachment
+        type: file
+        value:
+          - /home/venis/Downloads/14mb.pdf
+      - name: file_display_name
+        type: text
+        value: attachemetn 1
+      - name: type
+        type: text
+        value: documenty tyep
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

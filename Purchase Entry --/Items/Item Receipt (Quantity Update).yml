@@ -1,0 +1,33 @@
+info:
+  name: Item Receipt (Quantity Update)
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{base}}/purchase-entry/1/items/1/receipts"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: sort_order
+      value: desc
+      type: query
+      disabled: true
+    - name: sort_col
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "received_quantity": 10
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

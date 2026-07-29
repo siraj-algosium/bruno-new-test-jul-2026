@@ -1,0 +1,27 @@
+info:
+  name: Add Item
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/items"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "item_id":116,
+          "item_variant_id":86,
+          "type":"item",
+          "structure_id": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

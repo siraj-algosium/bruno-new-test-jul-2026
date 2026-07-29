@@ -1,0 +1,25 @@
+info:
+  name: store
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/global-currency"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"currencies\":[\"USD\", \"INR\", \"SAR\", \"AFN\", \"ALL\"]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

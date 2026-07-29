@@ -1,0 +1,17 @@
+info:
+  name: Delete
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{base}}/productPreset/1"
+  auth:
+    type: bearer
+    token: 364|xjwSnz3WXx0CJO0Zl1kLRnhm3VDSSfrBqhajHPTH31e772b7
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

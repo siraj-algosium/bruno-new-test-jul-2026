@@ -1,0 +1,23 @@
+info:
+  name: vendorRevert
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{base}}/vendorRevert/2"
+  body:
+    type: json
+    data: |-
+      {
+          "revert_comment":"Repeat once"
+      }
+  auth:
+    type: bearer
+    token: 2491|8rsNVU3z3uQavTnelxWbXLt673bTtEOYffHt7qhg47f92132
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

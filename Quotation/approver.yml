@@ -1,0 +1,44 @@
+info:
+  name: approver
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{base}}/usersLW?permission_filter=compare_quotation.approver"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/ecmascript
+  params:
+    - name: name
+      value: CP
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: ""
+      type: query
+      disabled: true
+    - name: exclude_ids
+      value: "3"
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: compare_quotation.approver
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

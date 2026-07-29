@@ -1,0 +1,7 @@
+info:
+  name: "Items (New Design Change ##)"
+  type: folder
+  seq: 23
+
+request:
+  auth: inherit

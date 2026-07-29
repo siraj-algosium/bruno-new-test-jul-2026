@@ -1,0 +1,26 @@
+info:
+  name: Booking- Item
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base}}/purchase-request/59/material-booking-production/items/variant/133/stock-booking"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "source": "general_stock",
+          "operation": "increase",
+          "qty": 4
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

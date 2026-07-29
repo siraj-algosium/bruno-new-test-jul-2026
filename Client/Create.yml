@@ -1,0 +1,30 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/client"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "contact_number" : "1231231231",
+          "email_address" : "asd@d.asd",
+
+          "registration_date" : "2025-04-11",
+          "address" : "asd",
+          "country" : 82,
+          "name" : "First client"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

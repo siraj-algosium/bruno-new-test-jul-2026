@@ -1,0 +1,7 @@
+info:
+  name: BoQ Sales Details & Buttons
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

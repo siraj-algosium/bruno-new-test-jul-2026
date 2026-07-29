@@ -1,0 +1,25 @@
+info:
+  name: Save selected Required documents
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{base}}/purchase-order/3/required-documents"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"required_documents_ids\": [4,2,3]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

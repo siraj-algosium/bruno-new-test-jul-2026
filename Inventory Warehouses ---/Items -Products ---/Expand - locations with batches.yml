@@ -1,0 +1,34 @@
+info:
+  name: Expand - locations with batches
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base}}/inventory-items-products/2/locations?page&per_page&sort_col&sort_order"
+  headers:
+    - name: Branch
+      value: "1"
+  params:
+    - name: page
+      value: ""
+      type: query
+    - name: per_page
+      value: ""
+      type: query
+    - name: sort_col
+      value: ""
+      type: query
+    - name: sort_order
+      value: ""
+      type: query
+  body:
+    type: json
+    data: "\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

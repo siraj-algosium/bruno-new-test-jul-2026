@@ -1,0 +1,38 @@
+info:
+  name: Projects LW
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/projectsLW"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: exclude_ids
+      value: "17"
+      type: query
+      description: pass the enquiry id here
+      disabled: true
+    - name: name
+      value: ""
+      type: query
+      disabled: true
+    - name: per_page
+      value: "5"
+      type: query
+      disabled: true
+    - name: status
+      value: "true"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

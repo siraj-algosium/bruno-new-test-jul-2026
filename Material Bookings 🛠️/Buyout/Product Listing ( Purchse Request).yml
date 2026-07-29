@@ -1,0 +1,55 @@
+info:
+  name: Product Listing ( Purchse Request)
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/purchase-request/3/material-booking-buyout/products?sortOrder=asc&sortCol="
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: code
+      value: "130"
+      type: query
+      disabled: true
+    - name: name
+      value: New Bom 1
+      type: query
+      disabled: true
+    - name: description
+      value: Samsung
+      type: query
+      disabled: true
+    - name: structure_name
+      value: BOMS
+      type: query
+      disabled: true
+    - name: page
+      value: "2"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "1"
+      type: query
+      disabled: true
+    - name: sortOrder
+      value: asc
+      type: query
+      description: desc
+    - name: sortCol
+      value: ""
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

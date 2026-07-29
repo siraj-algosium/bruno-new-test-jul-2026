@@ -1,0 +1,55 @@
+info:
+  name: Attachment reupload
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/project_design_request/1/attachments/2"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: per_page
+      value: "1"
+      type: query
+      disabled: true
+    - name: page
+      value: "30"
+      type: query
+      disabled: true
+    - name: project_name
+      value: ""
+      type: query
+      disabled: true
+    - name: project_id
+      value: "2"
+      type: query
+      disabled: true
+    - name: project_manager
+      value: ad
+      type: query
+      disabled: true
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: test
+      - name: type
+        type: text
+        value: test
+      - name: attachment
+        type: file
+        value:
+          - /C:/Users/sreyas/Pictures/Screenshots/Screenshot 2025-03-27 094456.png
+      - name: category
+        type: text
+        value: design
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

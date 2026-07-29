@@ -1,0 +1,27 @@
+info:
+  name: store
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/purchase-request/3/consumable-allocation/products/7/comments"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\":\"comment to PR\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: 180|hpoWc8VrZUrg7byGfz1szUcrslCvMTIcbKAr9fwad404a6dd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

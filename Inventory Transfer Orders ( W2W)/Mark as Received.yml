@@ -1,0 +1,18 @@
+info:
+  name: Mark as Received
+  type: http
+  seq: 12
+
+http:
+  method: PUT
+  url: "{{base}}/inventory-transfer-orders/2/mark-as-received"
+  headers:
+    - name: Branch
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

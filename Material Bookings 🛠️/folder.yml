@@ -1,0 +1,7 @@
+info:
+  name: Material Bookings 🛠️
+  type: folder
+  seq: 35
+
+request:
+  auth: inherit

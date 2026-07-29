@@ -1,0 +1,48 @@
+info:
+  name: List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/contract-review-actions/?sort_col=id&sort_order=desc"
+  headers:
+    - name: branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: log_noContractReview
+      value: "14"
+      type: query
+      disabled: true
+    - name: assigned_to_name
+      value: sre
+      type: query
+      disabled: true
+    - name: creator_name
+      value: sre
+      type: query
+      disabled: true
+    - name: status
+      value: completed
+      type: query
+      description: notCompleted, completed
+      disabled: true
+    - name: assigned_to_me
+      value: "true"
+      type: query
+      disabled: true
+    - name: sort_col
+      value: id
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

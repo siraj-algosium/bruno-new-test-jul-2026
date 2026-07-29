@@ -1,0 +1,26 @@
+info:
+  name: Delete Bom Multi Copy
+  type: http
+  seq: 13
+
+http:
+  method: DELETE
+  url: "{{base}}/boq-creation/boms"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":114,
+          "estimation_boq_creation_id":19,
+          "boq_creation_bom_ids":[126]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

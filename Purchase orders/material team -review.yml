@@ -1,0 +1,21 @@
+info:
+  name: material team -review
+  type: http
+  seq: 19
+
+http:
+  method: POST
+  url: "{{base}}/purchase-order/3/update-status/material-team"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"is_reviewed\":1\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,30 @@
+info:
+  name: update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/client/1"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "contact_number" : "1231231231",
+          "email_address" : "asd@d.asd",
+          "registration_date" : "2025-04-11",
+          "address" : "asd",
+          "country" : 82,
+          "name" : "Second Client",
+          "uid" : "CLI-0111"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,95 @@
+info:
+  name: buyout details history
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{base}}/buyout-requests/items/91/history?sort_order=asc"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: po_no
+      value: "1"
+      type: query
+      disabled: true
+    - name: rfq_no
+      value: "1"
+      type: query
+      disabled: true
+    - name: vendor_name
+      value: "1"
+      type: query
+      disabled: true
+    - name: created_by_name
+      value: am
+      type: query
+      disabled: true
+    - name: created_at
+      value: 25-02-2026
+      type: query
+      disabled: true
+    - name: comment
+      value: revert 1
+      type: query
+      disabled: true
+    - name: sort_col
+      value: created_at
+      type: query
+      disabled: true
+    - name: sort_order
+      value: asc
+      type: query
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  **Purpose:**  
+  Retrieves a list of buyout requests from the system. This endpoint supports filtering using various parameters, allowing users to fetch buyout requests based on specific criteria such as buyout ID, project, purchase request, revision, BOM, item, item variant, and date range.
+
+  **Endpoint:**  
+  `GET {{base1}}/buyout-requests`
+
+  **Headers:**
+
+  - `branch` (required): Branch identifier. Example: `1`
+      
+
+  **Expected Response:**  
+  A successful response returns a JSON object containing the list of buyout requests matching the filters. The structure typically includes:
+
+  - `success` (boolean): Indicates if the request was successful.
+      
+  - `data` (object): Contains the records and pagination info.
+      
+      - `records` (array): List of buyout request objects.
+          
+      - `pagination` (object): Pagination details (if applicable).
+          
+  - `message` (string): Informational message.
+      
+
+  **Notes:**
+
+  - The `branch` header is required for the request to succeed.
+      
+  - All filter parameters in the body are optional and can be combined as needed.
+      
+  - Ensure the `base1` variable is set in your environment to the root URL of the API.
+      
+
+  **Typical Usage:**  
+  Use this endpoint to list and filter buyout requests for reporting, auditing, or operational workflows.

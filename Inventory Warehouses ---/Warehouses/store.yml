@@ -1,0 +1,51 @@
+info:
+  name: store
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/inventory-warehouses"
+  headers:
+    - name: Cache-Control
+      value: no-cache
+    - name: Postman-Token
+      value: <calculated when request is sent>
+    - name: Content-Type
+      value: application/json
+    - name: Content-Length
+      value: <calculated when request is sent>
+    - name: Host
+      value: <calculated when request is sent>
+    - name: User-Agent
+      value: PostmanRuntime/7.39.1
+    - name: Accept
+      value: "*/*"
+    - name: Accept-Encoding
+      value: gzip, deflate, br
+    - name: Connection
+      value: keep-alive
+    - name: Branch
+      value: "{{brach}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Warehouse 4\",\r
+
+      \    \"location\":\"India\",\r
+
+      \    \"address\":\"9,Tvm,Kerala\",\r
+
+      \    \"description\":\"Desc\",\r
+
+      \    \"contact_person_id\":2\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

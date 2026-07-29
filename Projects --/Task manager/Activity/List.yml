@@ -1,0 +1,78 @@
+info:
+  name: List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/projects/33/task-manager/activities"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: per_page
+      value: "1"
+      type: query
+      disabled: true
+    - name: page
+      value: "2"
+      type: query
+      disabled: true
+    - name: sort_col
+      value: status
+      type: query
+      disabled: true
+    - name: sort_order
+      value: desc
+      type: query
+      disabled: true
+    - name: status
+      value: not_started
+      type: query
+      disabled: true
+    - name: task_name
+      value: "3"
+      type: query
+      disabled: true
+    - name: task_code
+      value: ""
+      type: query
+      disabled: true
+    - name: assigned_engineer_name
+      value: ""
+      type: query
+      disabled: true
+    - name: subtask_name
+      value: Task 122
+      type: query
+      disabled: true
+    - name: subtask_code
+      value: t
+      type: query
+      disabled: true
+    - name: subtask_assigned_engineer_name
+      value: tt
+      type: query
+      disabled: true
+    - name: activity_name
+      value: "1"
+      type: query
+      disabled: true
+    - name: activity_description
+      value: ""
+      type: query
+      disabled: true
+    - name: activity_assigned_engineer_name
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

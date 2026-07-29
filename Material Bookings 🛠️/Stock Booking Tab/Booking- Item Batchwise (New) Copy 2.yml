@@ -1,0 +1,32 @@
+info:
+  name: Booking- Item Batchwise (New) Copy 2
+  type: http
+  seq: 12
+
+http:
+  method: PUT
+  url: "{{base}}/purchase-request/59/material-booking/items/901/stock-booking"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "source": "project_unallocated_stock",
+          "operation": "decrease",
+          "qty": "1",
+          "batches": [
+              {
+                  "location_id": 24,
+                  "qty": 1
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

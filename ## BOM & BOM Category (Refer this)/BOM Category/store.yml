@@ -1,0 +1,32 @@
+info:
+  name: store
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{api_url}}/api/bom-categories"
+  headers:
+    - name: Branch
+      value: "1"
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"aaa\",\r
+
+      \    \"description\":\"Fourth Level Category\",\r
+
+      \    \"parent_id\":2\r
+
+      }"
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,32 @@
+info:
+  name: Create
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/attributes"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"attr31",
+          "tags":"attr-tag",
+          "type":"list",
+          "measurement_id":"1",
+          "unit_id":1,
+          "values_json_array":["aa","yyy","1"],
+          "validation":{"num_min":"1", "num_max":"100"},
+          "description":"descrip",
+          "display_name":"Attr5",
+        "description":"pr25ygggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+      }
+  auth:
+    type: bearer
+    token: 2370|Mnw1bpCU5psBNctvY5bDDZq3dOYYYALhxLkVbpxE9d5d8a4b
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

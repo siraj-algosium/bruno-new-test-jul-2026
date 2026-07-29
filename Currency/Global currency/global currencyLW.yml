@@ -1,0 +1,30 @@
+info:
+  name: global currencyLW
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{base}}/global-currencyLW"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: name
+      value: Rupee
+      type: query
+      disabled: true
+    - name: currency
+      value: usd
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

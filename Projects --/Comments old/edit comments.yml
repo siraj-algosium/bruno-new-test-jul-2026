@@ -1,0 +1,25 @@
+info:
+  name: edit comments
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/projects/3/comments/2"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\":\"hi test comment 123\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

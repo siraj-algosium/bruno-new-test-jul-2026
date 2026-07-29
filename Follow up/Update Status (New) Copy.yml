@@ -1,0 +1,24 @@
+info:
+  name: Update Status (New) Copy
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/followUp/304/update-status"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "complete_remark":"dddddddddd"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

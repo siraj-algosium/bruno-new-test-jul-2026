@@ -1,0 +1,27 @@
+info:
+  name: Item Variant Price Update
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{base}}/items/1/variants/1/price"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"currency_id\":\"1\",\r
+
+      \    \"price\":\"100.00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

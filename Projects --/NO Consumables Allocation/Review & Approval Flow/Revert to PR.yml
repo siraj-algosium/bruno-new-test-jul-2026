@@ -1,0 +1,20 @@
+info:
+  name: Revert to PR
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base}}/projects/1/purchase-request/1/consumable-allocation/approval-revert"
+  headers:
+    - name: Branch
+      value: "11"
+  auth:
+    type: bearer
+    token: 180|hpoWc8VrZUrg7byGfz1szUcrslCvMTIcbKAr9fwad404a6dd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

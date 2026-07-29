@@ -1,0 +1,28 @@
+info:
+  name: closing enquiry
+  type: http
+  seq: 17
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/87/close"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+        "status":3,
+        "closing_remark": "ddd444444",
+        "po_value": "999999999999.99",
+        "po_currency_id": "5",
+        "project_manager": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

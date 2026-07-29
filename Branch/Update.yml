@@ -1,0 +1,28 @@
+info:
+  name: Update
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base}}/branch/2"
+  body:
+    type: json
+    data: |-
+      {
+          "departmentCode":"1",
+          "departmentName":"Dep22",
+          "prnName":"pnn",
+          "prnAddress":"pAdd",
+          "prnPhone":"123456",
+          "prnWebsite":"abcc"
+      }
+  auth:
+    type: bearer
+    token: 1344|G8IPsB1jctpK3IQMxaj6Pv7knXd17EQoYKFlZGNqde37bdfb
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

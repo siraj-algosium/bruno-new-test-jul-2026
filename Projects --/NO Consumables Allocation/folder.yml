@@ -1,0 +1,7 @@
+info:
+  name: NO Consumables Allocation
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

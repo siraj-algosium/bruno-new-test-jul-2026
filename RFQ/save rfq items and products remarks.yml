@@ -1,0 +1,42 @@
+info:
+  name: save rfq items and products remarks
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{base}}/rfq/44/items-and-products/95/remarks"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: per_page
+      value: "5"
+      type: query
+      disabled: true
+    - name: page
+      value: "2"
+      type: query
+      disabled: true
+    - name: sort_col
+      value: created_at
+      type: query
+      disabled: true
+    - name: sort_order
+      value: asc
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"remarks\": \"test remarks\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

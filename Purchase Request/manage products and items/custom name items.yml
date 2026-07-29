@@ -1,0 +1,24 @@
+info:
+  name: custom name items
+  type: http
+  seq: 21
+
+http:
+  method: PUT
+  url: "{{base}}/purchase-request/56/items/919/update-label"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "label": "item custom naming 1"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

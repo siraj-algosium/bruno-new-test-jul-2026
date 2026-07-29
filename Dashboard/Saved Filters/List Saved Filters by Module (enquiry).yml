@@ -1,0 +1,27 @@
+info:
+  name: List Saved Filters by Module (enquiry)
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/dashboard/saved-filters?module_key=enquiry&page_key=global-pending"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: branch
+      value: "{{branch_id}}"
+  params:
+    - name: module_key
+      value: enquiry
+      type: query
+    - name: page_key
+      value: global-pending
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

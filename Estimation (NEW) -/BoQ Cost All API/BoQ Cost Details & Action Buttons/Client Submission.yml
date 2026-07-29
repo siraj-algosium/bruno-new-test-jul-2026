@@ -1,0 +1,28 @@
+info:
+  name: Client Submission
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{base}}/boq-cost/3/client-submission"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":4,
+          "comm_submission_date":"15-05-2025",
+          "comm_submission_remark":"Hddddd",
+          "quote_value": "999999999.22",
+          "is_over_rided": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

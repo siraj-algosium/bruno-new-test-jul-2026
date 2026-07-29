@@ -1,0 +1,30 @@
+info:
+  name: Add Bom
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/boq-creation/items"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":88,
+          "estimation_boq_creation_id":2,
+          "type":"bom",
+          "bom_main_id":"28",
+          "structure_id": null
+      }
+  auth:
+    type: bearer
+    token: Q7Uvwdcc9NsWzU29O2gU2tE5CNU0UHc4XKx0Y6Nt7603bbfd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,212 @@
+info:
+  name: Material Request List
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{base}}/material-release-requests"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: code
+      value: ""
+      type: query
+      disabled: true
+    - name: purchase_request_code
+      value: ""
+      type: query
+      disabled: true
+    - name: status
+      value: ""
+      type: query
+      disabled: true
+    - name: creator_by_name
+      value: ""
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+    - name: sort_order
+      value: ASC
+      type: query
+      disabled: true
+    - name: sort_col
+      value: code
+      type: query
+      description: |-
+        code
+        purchase_request_code
+        creator_by_name
+        status
+      disabled: true
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        let postBody = `{
+            "code": {
+                "filter_type": "include",
+                "values":[]
+            },
+            "item_variant_id": {
+                "filter_type": "include",
+                "values":[1]
+            },
+            "name": {
+                "filter_type": "include",
+                "value":""
+            },
+            "description": {
+                "filter_type": "include",
+                "value":""
+            },
+            "requested_qty": {
+                "filter_type": "less_than",
+                "value":""
+            },
+            "received_qty": {
+                "filter_type": "greater_than",
+                "value":""
+            },
+            "reserved_qty": {
+                "filter_type": "exact",
+                "value":""
+            },
+            "allocated_qty": {
+                "filter_type": "range",
+                "min":"",
+                "max":""
+            }
+        }`;
+
+        // Read the raw request body
+        let rawBody = req.getBody().raw;
+
+        // Encode to Base64
+        let encodedBody = btoa(postBody);
+
+        // Update the request URL with ?filter=...
+        let url = req.getUrl().toString().split("?")[0]; // base URL without query
+        req.getUrl() = url + "?filter=" + encodeURIComponent(encodedBody);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  # Get Material Release Request Details
+
+  ## Overview
+  Fetches detailed information about a specific material release request by its ID. This endpoint returns BOM (Bill of Materials) items and product variants associated with the material release request, including quantity information and allocation status.
+
+  ## Endpoint
+  ```
+  GET {{base}}/material-release-requests/{id}
+  ```
+
+  ## Path Parameters
+  | Parameter | Type | Required | Description |
+  |-----------|------|----------|-------------|
+  | `id` | integer | Yes | The unique identifier of the material release request (e.g., 3) |
+
+  ## Headers
+  | Header | Type | Required | Description |
+  |--------|------|----------|-------------|
+  | `Branch` | string | Yes | Branch identifier for the request context (e.g., "1") |
+
+  ## Query Parameters
+  | Parameter | Type | Required | Default | Description |
+  |-----------|------|----------|---------|-------------|
+  | `page` | integer | No | 1 | Page number for pagination |
+  | `per_page` | integer | No | 30 | Number of records per page (e.g., 10) |
+  | `status` | string | No | - | Filter by status (e.g., "pending") |
+  | `sort_order` | string | No | - | Sort order: "asc" or "desc" |
+  | `sort_col` | string | No | - | Column to sort by (e.g., "status") |
+
+  ## Response Structure
+
+  ### Success Response (200 OK)
+  ```json
+  {
+    "success": boolean,
+    "data": {
+      "records": [
+        {
+          "item_id": integer|null,
+          "item_variant_id": integer|null,
+          "bom_main_id": integer|null,
+          "name": string,
+          "code": string,
+          "variant_code": string|null,
+          "description": string,
+          "uom_code": string|null,
+          "required_quantity": string,
+          "requested_qty": integer,
+          "received_qty": integer,
+          "allocated_qty": integer
+        }
+      ],
+      "pagination": {
+        "total": integer,
+        "per_page": integer,
+        "current_page": integer
+      }
+    },
+    "message": string
+  }
+  ```
+
+  ### Response Fields
+  - **success**: Indicates if the request was successful
+  - **data.records**: Array of BOM items and product variants
+    - **item_id**: Item identifier (null for BOM entries)
+    - **item_variant_id**: Item variant identifier (null for BOM entries)
+    - **bom_main_id**: BOM main identifier (null for item variants)
+    - **name**: Name of the BOM or item
+    - **code**: Unique code identifier
+    - **variant_code**: Variant code for items (null for BOMs)
+    - **description**: Detailed description
+    - **uom_code**: Unit of measurement code
+    - **required_quantity**: Total quantity required
+    - **requested_qty**: Quantity requested
+    - **received_qty**: Quantity received
+    - **allocated_qty**: Quantity allocated
+  - **data.pagination**: Pagination metadata
+    - **total**: Total number of records
+    - **per_page**: Records per page
+    - **current_page**: Current page number
+  - **message**: Response message
+
+  ## Use Cases
+
+  ### 1. View Material Release Request Details
+  Retrieve all items and BOMs associated with a specific material release request to review what materials are needed.
+
+  ### 2. Track Allocation Status
+  Monitor the requested, received, and allocated quantities for each item to track fulfillment progress.
+
+  ### 3. Paginated Data Retrieval
+  Use pagination parameters to fetch large material release requests in manageable chunks.
+
+  ### 4. Filter by Status
+  Filter records by status (e.g., "pending") to focus on items requiring attention.
+
+  ### 5. Sorted Results
+  Sort results by specific columns (e.g., status) in ascending or descending order for better organization.
+
+  ## Example Usage
+  ```
+  GET {{base}}/material-release-requests/3?page=1&per_page=10&status=pending&sort_order=desc&sort_col=status
+  ```

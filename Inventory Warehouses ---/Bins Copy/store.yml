@@ -1,0 +1,27 @@
+info:
+  name: store
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/inventory-warehouses/2/zones/1/racks/1/shelves/6/bins"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Bin 4\",\r
+
+      \    \"description\":\"Desc\"\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

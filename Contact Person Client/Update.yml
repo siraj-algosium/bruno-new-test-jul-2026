@@ -1,0 +1,26 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base1}}/client/contactPerson/4"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+        "name":"testname 1",
+        "contactNumber":"12345678",
+        "isActive":true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

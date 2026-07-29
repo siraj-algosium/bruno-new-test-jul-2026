@@ -1,0 +1,29 @@
+info:
+  name: update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/purchase-request/3/consumable-allocation/products/7/comments/15"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\":\"updated the requirement\",\r
+
+      \    \"comment_source\":\"consumable_allocation\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: 180|hpoWc8VrZUrg7byGfz1szUcrslCvMTIcbKAr9fwad404a6dd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

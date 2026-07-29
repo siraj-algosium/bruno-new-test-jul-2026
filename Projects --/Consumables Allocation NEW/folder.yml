@@ -1,0 +1,7 @@
+info:
+  name: Consumables Allocation NEW
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit

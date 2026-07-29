@@ -1,0 +1,57 @@
+info:
+  name: LIST - LOCATION VIEW (Normal Search)
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base}}/inventory-items-products/warehouse/1?sort_order=asc&sort_col=name"
+  headers:
+    - name: Branch
+      value: "1"
+  params:
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+    - name: sort_order
+      value: asc
+      type: query
+    - name: sort_col
+      value: name
+      type: query
+    - name: name
+      value: "1"
+      type: query
+      disabled: true
+    - name: code
+      value: "1"
+      type: query
+      disabled: true
+    - name: variant_code
+      value: "10"
+      type: query
+      disabled: true
+    - name: category
+      value: c
+      type: query
+      disabled: true
+    - name: description
+      value: ad
+      type: query
+      description: variant name
+      disabled: true
+  body:
+    type: json
+    data: "\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

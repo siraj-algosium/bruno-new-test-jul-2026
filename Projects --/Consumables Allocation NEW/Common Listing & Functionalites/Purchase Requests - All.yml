@@ -1,0 +1,73 @@
+info:
+  name: Purchase Requests - All
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/projects/consumable-allocation-purchase-requests?sortCol=project_code&sortOrder=desc"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: sortCol
+      value: project_code
+      type: query
+    - name: sortOrder
+      value: desc
+      type: query
+    - name: per_page
+      value: "2"
+      type: query
+      disabled: true
+    - name: status
+      value: queued
+      type: query
+      description: |
+        queued
+        initiated
+        under_review
+        under_approval
+        review_reverted
+        approval_reverted
+        approved
+        pr_reverted
+      disabled: true
+    - name: code
+      value: "3"
+      type: query
+      disabled: true
+    - name: created_at
+      value: 2025-06-13
+      type: query
+      disabled: true
+    - name: creater_name
+      value: ad
+      type: query
+      disabled: true
+    - name: reviewer_name
+      value: "23"
+      type: query
+      disabled: true
+    - name: approver_name
+      value: ad
+      type: query
+      disabled: true
+    - name: project_code
+      value: "02"
+      type: query
+      disabled: true
+    - name: project_title
+      value: "2"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

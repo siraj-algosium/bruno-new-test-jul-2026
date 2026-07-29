@@ -1,0 +1,7 @@
+info:
+  name: Enquiry Scopes
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

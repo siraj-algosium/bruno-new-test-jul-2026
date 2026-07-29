@@ -1,0 +1,36 @@
+info:
+  name: all currency list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/all-currencies?sort_col=currency&sort_order=asc"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: name
+      value: Rupee
+      type: query
+      disabled: true
+    - name: currency
+      value: usd
+      type: query
+      disabled: true
+    - name: sort_col
+      value: currency
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

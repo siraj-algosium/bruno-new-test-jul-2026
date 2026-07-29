@@ -1,0 +1,40 @@
+opencollection: 1.0.0
+
+info:
+  name: TEAM - ERP BSS DEV copy
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  auth:
+    type: bearer
+    token: 5849|vXWA3R721Xiy7CuRPZsYRjGfm0PeD7FSYsenq14Fc7455940
+  variables:
+    - name: base-uat
+      value: https://datnext-uat-api.algosium.com/api
+    - name: base
+      value: https://datnext-dev-api.algosium.com/api
+    - name: token_admin
+      value: ""
+    - name: branch_id
+      value: ""
+  scripts:
+    - type: before-request
+      code: |-
+        // pm.environment.get("base");
+        //    pm.environment.set("base", "https://datnext-dev-api.algosium.com/api");
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

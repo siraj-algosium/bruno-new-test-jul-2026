@@ -1,0 +1,7 @@
+info:
+  name: Bom Attribute
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

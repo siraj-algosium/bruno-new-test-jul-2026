@@ -1,0 +1,79 @@
+info:
+  name: Dont Use  (Attribute Creation)
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{api_url}}/api/itemAttribute"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"item\": 8,\r
+
+      \  \"attr_arr\": [\r
+
+      \    {\r
+
+      \      \"name\": \"Color 1\",\r
+
+      \      \"value_arr\": [\r
+
+      \        {\r
+
+      \          \"value\": \"Red\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \          \"value\": \"Blue\"\r
+
+      \        }\r
+
+      \      ],\r
+
+      \      \"value_del_ids\":[1]\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"name\": \"Size\",\r
+
+      \      \"value_arr\": [\r
+
+      \        {\r
+
+      \          \"value\": \"Medium\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \          \"value\": \"Large\"\r
+
+      \        }\r
+
+      \      ],\r
+
+      \      \"value_del_ids\":[]\r
+
+      \    }\r
+
+      \  ],\r
+
+      \  \"attr_del_ids\": []\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

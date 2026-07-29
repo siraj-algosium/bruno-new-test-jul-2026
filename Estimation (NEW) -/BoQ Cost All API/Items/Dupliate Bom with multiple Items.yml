@@ -1,0 +1,85 @@
+info:
+  name: Dupliate Bom with multiple Items
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{base}}/boq-cost/boms/3/duplicate-with-multiple-items"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":106,\r
+
+      \    \"estimation_boq_cost_id\":3,\r
+
+      \    \"quantity\":2,\r
+
+      \    \"items\":[\r
+
+      \        {\r
+
+      \            \"boq_cost_item_id\":12,\r
+
+      \            \"boms\": [\r
+
+      \                {\r
+
+      \                    \"id\":1,\r
+
+      \                    \"quantity\":1\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"id\":2,\r
+
+      \                    \"quantity\":11\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"boq_cost_item_id\":13,\r
+
+      \            \"boms\": [\r
+
+      \                {\r
+
+      \                    \"id\":1,\r
+
+      \                    \"quantity\":2\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"id\":2,\r
+
+      \                    \"quantity\":22\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

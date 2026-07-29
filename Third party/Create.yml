@@ -1,0 +1,32 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/thirdparty"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "type":1,
+          "third_party_name":"nnn",
+          "third_party_address":"add",
+          "third_party_country":1,
+          "email_address":"ee2rr.com",
+          "contact_number":1222,
+          "isActive":true
+      }
+  auth:
+    type: bearer
+    token: 1352|ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

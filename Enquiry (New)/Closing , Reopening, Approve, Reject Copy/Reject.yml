@@ -1,0 +1,26 @@
+info:
+  name: Reject
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/40719/reject"
+  headers:
+    - name: branch
+      value: "1"
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "remark": "dafafafadafdafadsfsafdsa"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

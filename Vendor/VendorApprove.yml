@@ -1,0 +1,23 @@
+info:
+  name: VendorApprove
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{base}}/vendorApprove/2"
+  body:
+    type: json
+    data: |-
+      {
+         "type":"approver"
+      }
+  auth:
+    type: bearer
+    token: 2491|8rsNVU3z3uQavTnelxWbXLt673bTtEOYffHt7qhg47f92132
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

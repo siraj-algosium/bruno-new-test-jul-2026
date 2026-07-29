@@ -1,0 +1,25 @@
+info:
+  name: Assign Roles
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/purchase-request/3/consumable-allocation"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "reviewer":2,
+          "approver":4
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

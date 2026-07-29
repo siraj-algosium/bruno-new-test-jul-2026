@@ -1,0 +1,24 @@
+info:
+  name: Delete Activity - Multi
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{base}}/projects/31/task-manager/activities"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "activity_ids":[5]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,18 @@
+info:
+  name: Delete
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{base}}/projects/31/task-manager/activities/1/comments/1"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

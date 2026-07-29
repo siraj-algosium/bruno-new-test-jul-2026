@@ -1,0 +1,27 @@
+info:
+  name: delete comment
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{base}}/project_design_request/3/attachments/comments/13"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"attachment\":5,\r
+
+      \    \"comment\": \"sss sss sss ssss 133.\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

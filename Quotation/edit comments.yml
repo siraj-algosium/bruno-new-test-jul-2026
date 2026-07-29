@@ -1,0 +1,27 @@
+info:
+  name: edit comments
+  type: http
+  seq: 16
+
+http:
+  method: PUT
+  url: "{{base}}/rfq/9/quotation/comments/2"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\": \"test yy\"\r
+
+      }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

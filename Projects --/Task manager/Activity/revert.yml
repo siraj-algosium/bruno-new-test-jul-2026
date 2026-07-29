@@ -1,0 +1,25 @@
+info:
+  name: revert
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{base}}/projects/31/task-manager/activities/1/revert"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"planning_subtask_id\":1\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,31 @@
+info:
+  name: select item
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{base}}/rfq/9/quotation/select-item"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"vendor_id\": 43,\r
+
+      \    \"item_id\":4,\r
+
+      \    \"selected\":1\r
+
+      }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

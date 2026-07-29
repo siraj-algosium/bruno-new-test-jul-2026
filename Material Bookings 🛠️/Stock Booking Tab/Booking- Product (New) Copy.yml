@@ -1,0 +1,27 @@
+info:
+  name: Booking- Product (New) Copy
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{base}}/purchase-request/59/material-booking/products/413/stock-booking"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "source":"production", //general_stock,project_unallocated_stock,project,purchase,production
+          "operation": "decrease",
+          "qty":1
+          //"destination_project_id": 4
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

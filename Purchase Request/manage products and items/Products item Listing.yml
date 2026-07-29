@@ -1,0 +1,30 @@
+info:
+  name: Products item Listing
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{base}}/projects/2/purchase-request/1/products/101/view-items"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: sort_col
+      value: item_name
+      type: query
+      disabled: true
+    - name: sort_order
+      value: asc
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

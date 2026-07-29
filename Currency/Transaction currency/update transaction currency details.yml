@@ -1,0 +1,31 @@
+info:
+  name: update transaction currency details
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base}}/transaction-currency/1"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"is_active\": false,\r
+
+      \    \"decimal_precision\": 2,\r
+
+      \    \"rounding_method\": \"up\"\r
+
+      \r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

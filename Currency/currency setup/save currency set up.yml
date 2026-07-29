@@ -1,0 +1,51 @@
+info:
+  name: save currency set up
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/currency-setup"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"local\" : {\r
+
+      \        \"global_currency_id\":3,\r
+
+      \        \"effective_date\": \"2026-04-01\",\r
+
+      \        \"is_active\" : false,\r
+
+      \        \"decimal_precision\": 4,\r
+
+      \        \"rounding_method\": \"nearest\"\r
+
+      \    },\r
+
+      \    \"group\" : {\r
+
+      \        \"global_currency_id\":2,\r
+
+      \        \"effective_date\": \"2026-05-01\",\r
+
+      \        \"is_active\" : true,\r
+
+      \        \"decimal_precision\": 2,\r
+
+      \        \"rounding_method\": \"up\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

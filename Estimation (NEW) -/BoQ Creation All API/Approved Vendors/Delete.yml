@@ -1,0 +1,26 @@
+info:
+  name: Delete
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{base}}/boq-creation/items/2/vendors"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "id":"2",
+      }
+  auth:
+    type: bearer
+    token: 2215|JhUvdsm6NvLgoCTLCxE92o5QrVtm9gXQZoPjlhg5121181fd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,39 @@
+info:
+  name: Store - Transfer an Item (with Locations)
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{base}}/inventory-location-transfers/1/save-items"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"inventory_stock_id\": 1,\r
+
+      \    \"items\": [\r
+
+      \        {\r
+
+      \            \"inventory_stock_location_id\": 6,\r
+
+      \            \"transfer_qty\": 10,\r
+
+      \            \"destination_location_id\": 11\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

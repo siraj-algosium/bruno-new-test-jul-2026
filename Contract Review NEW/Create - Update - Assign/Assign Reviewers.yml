@@ -1,0 +1,27 @@
+info:
+  name: Assign Reviewers
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base}}/contract-reviews/3752/assign"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      { 
+          "techReviewer": 1, 
+          "comReviewer": 2, 
+          "finApprover": 3,
+          "createdBy":1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

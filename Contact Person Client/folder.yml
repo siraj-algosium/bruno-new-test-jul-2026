@@ -1,0 +1,7 @@
+info:
+  name: Contact Person Client
+  type: folder
+  seq: 49
+
+request:
+  auth: inherit

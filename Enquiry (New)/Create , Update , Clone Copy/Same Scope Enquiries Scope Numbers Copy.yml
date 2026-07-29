@@ -1,0 +1,39 @@
+info:
+  name: Same Scope Enquiries Scope Numbers Copy
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{base}}/enquiries/601/same-scope-enquiries?scopes=35,38,39&parent_enquiry_id=50899&purpose=update"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+    - name: scopes
+      value: 35,38,39
+      type: query
+      description: required if purpose is update or clone
+    - name: parent_enquiry_id
+      value: "50899"
+      type: query
+      description: required if purpose is set_parent
+    - name: purpose
+      value: update
+      type: query
+      description: set_parent | update | clone
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

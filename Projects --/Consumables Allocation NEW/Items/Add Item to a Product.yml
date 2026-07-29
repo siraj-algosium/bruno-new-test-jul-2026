@@ -1,0 +1,25 @@
+info:
+  name: Add Item to a Product
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/purchase-request/52/consumable-allocation/products/338/consumables"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "item_id":116,
+          "item_variant_id":137
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,32 @@
+info:
+  name: update status
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/contract-review-actions/96/update-status"
+  headers:
+    - name: branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: status
+      value: cccc
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"status\":\"completed\"\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

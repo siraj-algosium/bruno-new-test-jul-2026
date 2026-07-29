@@ -1,0 +1,43 @@
+info:
+  name: Item Variant Creation
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/items/1/variants"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"item\": 1,\r
+
+      \  \"name\": \"Variant5\",\r
+
+      \  \"status\": \"active\",\r
+
+      \  \"attr_arr\": [\r
+
+      \    {\r
+
+      \      \"attribute\": 1,\r
+
+      \      \"attribute_value\": 4\r
+
+      \    }\r
+
+      \  ],\r
+
+      \  \"attr_del_ids\": [2,3,4]\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,47 @@
+info:
+  name: create
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/projects/24/project-planning/tasks"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "[\r
+
+      \    {\r
+
+      \        \"task_id\": 14,\r
+
+      \        \"sub_task_id\":[8,7]\r
+
+      \    },\r
+
+      \    {\r
+
+      \        \"task_id\": 15,\r
+
+      \        \"sub_task_id\":[50,51,52]\r
+
+      \    },\r
+
+      \    {\r
+
+      \        \"task_id\": 17,\r
+
+      \        \"sub_task_id\":[55,56,57]\r
+
+      \    }\r
+
+      ]\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

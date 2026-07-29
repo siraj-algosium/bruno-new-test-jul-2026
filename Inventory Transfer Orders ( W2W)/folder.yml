@@ -1,0 +1,7 @@
+info:
+  name: Inventory Transfer Orders ( W2W)
+  type: folder
+  seq: 21
+
+request:
+  auth: inherit

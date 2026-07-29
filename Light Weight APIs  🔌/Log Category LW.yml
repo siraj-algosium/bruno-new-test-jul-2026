@@ -1,0 +1,39 @@
+info:
+  name: Log Category LW
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base}}/logCategoriesLW?active=true&page=1&per_page&exclude_ids=66,65"
+  headers:
+    - name: Branch
+      value: "1"
+    - name: Accept
+      value: application/ecmascript
+  params:
+    - name: name
+      value: CP
+      type: query
+      disabled: true
+    - name: active
+      value: "true"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: per_page
+      value: ""
+      type: query
+    - name: exclude_ids
+      value: 66,65
+      type: query
+  auth:
+    type: bearer
+    token: 241|sN6iInw6RvwnFfE0ZelLEp0iZMW1kWVCGUUVqdVI8f409cb3
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,25 @@
+info:
+  name: list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/user-activity-log?created_at_start=2024-12-20 00:00:00&created_at_end=2024-12-20 23:59:59"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: created_at_start
+      value: 2024-12-20 00:00:00
+      type: query
+    - name: created_at_end
+      value: 2024-12-20 23:59:59
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

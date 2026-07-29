@@ -1,0 +1,18 @@
+info:
+  name: list
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base1}}/items/146/makes"
+  headers:
+    - name: Branch
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

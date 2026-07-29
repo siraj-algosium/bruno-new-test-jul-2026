@@ -1,0 +1,27 @@
+info:
+  name: second reviewer update
+  type: http
+  seq: 19
+
+http:
+  method: POST
+  url: "{{base}}/rfq/9/quotation/update-status/second-review"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"is_reviewed\": 1\r
+
+      }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

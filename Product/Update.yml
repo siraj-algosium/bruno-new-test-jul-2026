@@ -1,0 +1,24 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/product/1"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"pr1",
+          "component_arr":[1,2]
+      }
+  auth:
+    type: bearer
+    token: 1916|zkQaEyyFZylzYLpuROk3ZqHa8kJRTTfG1D1eXhAOdb2c93ca
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

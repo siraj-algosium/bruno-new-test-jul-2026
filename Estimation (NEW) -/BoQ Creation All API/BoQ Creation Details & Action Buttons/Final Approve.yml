@@ -1,0 +1,24 @@
+info:
+  name: Final Approve
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{base}}/boq-creation/2/final-approve"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":88
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,27 @@
+info:
+  name: approver update
+  type: http
+  seq: 20
+
+http:
+  method: POST
+  url: "{{base}}/rfq/26/quotation/update-status/approve"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"is_approved\": 1\r
+
+      }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

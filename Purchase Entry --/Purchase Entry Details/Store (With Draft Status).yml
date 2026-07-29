@@ -1,0 +1,37 @@
+info:
+  name: Store (With Draft Status)
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/purchase-entry"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"purchase_order_id\": 9,\r
+
+      \  \"invoice_no\": \"123456\",\r
+
+      \  \"invoice_date\": \"01-03-2026\",\r
+
+      \  \"invoice_amount\": 30000.99,\r
+
+      \  \"entry_date\": \"01-03-2026\",\r
+
+      \  \"remarks\": \"\"\r
+
+      }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

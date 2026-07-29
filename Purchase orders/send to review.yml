@@ -1,0 +1,33 @@
+info:
+  name: send to review
+  type: http
+  seq: 18
+
+http:
+  method: POST
+  url: "{{base}}/purchase-order/3/send-to-review"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"material_team_reviewer_id\" : 1,\r
+
+      \    \"project_team_reviewer_id\": 2,\r
+
+      \    \"account_team_reviewer_id\": 3,\r
+
+      \    \"finance_head_reviewer_id\": 4,\r
+
+      \    \"management_reviewer_id\": 5\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

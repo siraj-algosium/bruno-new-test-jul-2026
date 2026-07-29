@@ -1,0 +1,21 @@
+info:
+  name: subtask comments delete
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{base1}}/projects/25/project-planning/sub-tasks/38/comments/12"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

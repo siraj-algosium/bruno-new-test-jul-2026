@@ -1,0 +1,32 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/api/boq-creation/6"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":"12",
+          "prepared_by":1,
+          "reviewer":1,
+          "approver":1,
+          "team_leader":1,
+          "created_date":"2025-05-01",
+          "due_date":"2025-05-01",
+          "internal_revision":"1",
+          "margin_percentage":"50"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: deleteFollowUpAttachment
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base}}/deleteFollowUpAttachment"
+  body:
+    type: json
+    data: |-
+      {
+        "name":"1724397842.jpg"
+      }
+  auth:
+    type: bearer
+    token: 1344|G8IPsB1jctpK3IQMxaj6Pv7knXd17EQoYKFlZGNqde37bdfb
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

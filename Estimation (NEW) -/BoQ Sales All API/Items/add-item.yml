@@ -1,0 +1,39 @@
+info:
+  name: add-item
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/boq-sale/items"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":4,\r
+
+      \    \"estimation_boq_sale_id\":16,\r
+
+      \    \"item_id\":12,\r
+
+      \    \"item_variant_id\":9,\r
+
+      \    \"type\":\"item\",\r
+
+      \    \"bom_main_id\": null,\r
+
+      \    \"structure_id\": null\r
+
+      }"
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,26 @@
+info:
+  name: Approval Revert
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/boq-creation/2/approval-revert"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":88
+      }
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

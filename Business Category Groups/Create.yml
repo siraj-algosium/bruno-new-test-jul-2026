@@ -1,0 +1,28 @@
+info:
+  name: Create
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/business-category-groups"
+  headers:
+    - name: branch
+      value: "{{branch_id}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "CP",
+        "description": "CP",
+        "categories": [1, 4]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

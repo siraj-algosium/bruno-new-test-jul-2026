@@ -1,0 +1,37 @@
+info:
+  name: Enquiry Status LW
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base}}/enquiryStatusLW?page=1&per_page"
+  headers:
+    - name: Branch
+      value: "1"
+    - name: Accept
+      value: application/ecmascript
+  params:
+    - name: name
+      value: B
+      type: query
+      disabled: true
+    - name: active
+      value: "true"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+    - name: per_page
+      value: ""
+      type: query
+  auth:
+    type: bearer
+    token: 241|sN6iInw6RvwnFfE0ZelLEp0iZMW1kWVCGUUVqdVI8f409cb3
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

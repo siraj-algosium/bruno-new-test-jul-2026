@@ -1,0 +1,28 @@
+info:
+  name: Map Direct Top Level Categories
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/branch/11/categories"
+  headers:
+    - name: branch
+      value: "{{branch_id}}"
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "category_ids": [10, 11]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

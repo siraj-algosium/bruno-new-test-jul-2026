@@ -1,0 +1,167 @@
+info:
+  name: List
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/enquiries"
+  headers:
+    - name: branch
+      value: "1"
+  params:
+    - name: per_page
+      value: "30"
+      type: query
+      disabled: true
+    - name: enquiry_reg_date
+      value: 2024-04-29
+      type: query
+      disabled: true
+    - name: project_title
+      value: tt
+      type: query
+      disabled: true
+    - name: description
+      value: dd
+      type: query
+      disabled: true
+    - name: log_category
+      value: "1"
+      type: query
+      disabled: true
+    - name: enquiry_type
+      value: "1"
+      type: query
+      disabled: true
+    - name: log_no
+      value: CA240275
+      type: query
+      disabled: true
+    - name: priority
+      value: "1"
+      type: query
+      disabled: true
+    - name: contractor
+      value: "11"
+      type: query
+      disabled: true
+    - name: client
+      value: "11"
+      type: query
+      disabled: true
+    - name: contractor_reference
+      value: "11"
+      type: query
+      disabled: true
+    - name: local_company
+      value: "1"
+      type: query
+      disabled: true
+    - name: tender_no
+      value: "11"
+      type: query
+      disabled: true
+    - name: country_code
+      value: "1"
+      type: query
+      disabled: true
+    - name: region
+      value: "12"
+      type: query
+      disabled: true
+    - name: received_date
+      value: 2024-04-23
+      type: query
+      disabled: true
+    - name: last_date
+      value: 2001-01-02
+      type: query
+      disabled: true
+    - name: estimation_coordinator
+      value: "1"
+      type: query
+      disabled: true
+    - name: proposal_engineer
+      value: "1"
+      type: query
+      disabled: true
+    - name: sales_engineer
+      value: "1"
+      type: query
+      disabled: true
+    - name: status
+      value: "8"
+      type: query
+      disabled: true
+    - name: remarks
+      value: rr
+      type: query
+      disabled: true
+    - name: next_followup_date
+      value: 2001-01-01
+      type: query
+      disabled: true
+    - name: add_contact
+      value: "167"
+      type: query
+      disabled: true
+    - name: sortOrder
+      value: project_title:false
+      type: query
+      disabled: true
+    - name: awarded_date_start
+      value: 2024-08-01
+      type: query
+      disabled: true
+    - name: awarded_date_end
+      value: 2024-08-01
+      type: query
+      disabled: true
+    - name: next_followup_date_start
+      value: 2024-05-29
+      type: query
+      disabled: true
+    - name: next_followup_date_end
+      value: 2024-09-29
+      type: query
+      disabled: true
+    - name: received_date_start
+      value: 2024-05-24
+      type: query
+      disabled: true
+    - name: received_date_end
+      value: 2024-09-24
+      type: query
+      disabled: true
+    - name: last_date_start
+      value: 2024-06-25
+      type: query
+      disabled: true
+    - name: last_date_end
+      value: 2024-07-25
+      type: query
+      disabled: true
+    - name: submission_date_tech_start
+      value: ""
+      type: query
+      disabled: true
+    - name: submission_date_tech_end
+      value: ""
+      type: query
+      disabled: true
+    - name: submission_date_com_start
+      value: 2024-07-3
+      type: query
+      disabled: true
+    - name: submission_date_com_end
+      value: 2024-07-3
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

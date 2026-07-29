@@ -1,0 +1,30 @@
+info:
+  name: Drop Down LW
+  type: http
+  seq: 25
+
+http:
+  method: GET
+  url: "{{base}}/itemCategoriesDropDownLW?name=samsung"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: name
+      value: samsung
+      type: query
+    - name: page
+      value: ""
+      type: query
+      disabled: true
+    - name: per_page
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

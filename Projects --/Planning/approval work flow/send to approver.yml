@@ -1,0 +1,21 @@
+info:
+  name: send to approver
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/projects/31/project-planning/send-to-approval"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"approver_id\" : 1\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

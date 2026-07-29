@@ -1,0 +1,51 @@
+info:
+  name: Update New Copy
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{base}}/enquiries/53574"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |
+      {
+        "enquiry_reg_date": "2026-01-13",
+        "project_title": "Test 4",
+        "log_category": 4,
+        "description": "tet",
+        "is_eoi": false,
+        "enquiry_type": 1,
+        "priority": 2,
+        "approver": null,
+        "log_no": "AD260005-2",
+        "customer_id": 2064,
+        "client_id": 3643,
+        "customer_reference": null,
+        "local_company": null,
+        "tender_no": null,
+        "country_code": 2,
+        "region": "Abu Dhabi",
+        "received_date": "2026-01-13",
+        "last_date": "2026-01-31",
+        "estimation_coordinator": 333,
+        "proposal_engineer": 7,
+        "status": 16,
+        "remarks": null,
+        "sales_engineer": 332,
+        "customer_contacts": [11],
+        "customer_contact_default": 11,
+        "scopes": [396, 397, 398],
+        "scope_number": 4,
+        "followup_watchers": [7]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

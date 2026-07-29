@@ -1,0 +1,25 @@
+info:
+  name: save selected terms And Conditions
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{base}}/purchase-order/3/terms-and-conditions"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"terms_and_conditions_id\": 2\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

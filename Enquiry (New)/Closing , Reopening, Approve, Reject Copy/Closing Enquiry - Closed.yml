@@ -1,0 +1,26 @@
+info:
+  name: Closing Enquiry - Closed
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/53576/close"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+        "status":10,//mandatory
+        "closing_remark": "ddd444444",//mandadory
+        "priority_id": 8
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

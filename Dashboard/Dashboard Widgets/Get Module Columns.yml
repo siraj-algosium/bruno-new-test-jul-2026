@@ -1,0 +1,29 @@
+info:
+  name: Get Module Columns
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{base}}/dashboard/widgets/module-columns?module_key=enquiry&saved_filter_id=1"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: branch
+      value: "{{branch_id}}"
+  params:
+    - name: module_key
+      value: enquiry
+      type: query
+    - name: saved_filter_id
+      value: "1"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

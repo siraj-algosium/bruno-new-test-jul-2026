@@ -1,0 +1,43 @@
+info:
+  name: second_reviewer
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{base}}/usersLW?is_active=true&permission_filter=compare_quotation.second_reviewer"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/ecmascript
+  params:
+    - name: name
+      value: CP
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: ""
+      type: query
+      disabled: true
+    - name: exclude_ids
+      value: "3"
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+    - name: permission_filter
+      value: compare_quotation.second_reviewer
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,53 @@
+info:
+  name: Clone Enquiry
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/3047/clone"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+        "is_eoi":true,
+        "enquiry_type": 1,
+        "log_category": 1,
+        "scopes": [5],
+        "priority": 1,
+        "approver":1,
+
+        "customer_id": 8,
+        "client_id": 4,
+        "customer_reference": "ddd",
+        "customer_contacts":[7],
+        "customer_contact_default":7,
+
+        "project_title": "New Enquiry Sequence 1",
+        "tender_no": "12456",
+        "description": "desc1",
+        "country_code": 2, //optional
+        "region": "dafa", //optional
+
+        "received_date": "2025-10-16",
+        "last_date": "2026-10-11",
+        "next_followup_date": "2025-10-01",//optional
+        "follow_up_person": 1,//optional
+
+        "estimation_coordinator": 1,
+        "proposal_engineer": 1,
+        "sales_engineer": 1,
+        
+        "remarks": "rdddr",//optional
+        "followup_watchers": [1,2,3]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

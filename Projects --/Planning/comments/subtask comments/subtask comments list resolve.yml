@@ -1,0 +1,21 @@
+info:
+  name: subtask comments list resolve
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base1}}/projects/25/project-planning/sub-tasks/38/comments/resolve"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r\n    \"comment\": \"asdsad\"\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

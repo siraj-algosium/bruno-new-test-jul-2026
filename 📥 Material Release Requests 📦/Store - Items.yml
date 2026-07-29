@@ -1,0 +1,35 @@
+info:
+  name: Store - Items
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{base}}/material-release-requests/1/items/item:113:136"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    // \"item_id\":113,\r
+
+      \    // \"item_variant_id\":136,\r
+
+      \    // \"bom_main_id\":null,\r
+
+      \    \"requested_quantity\":20,\r
+
+      \    \"required_date\":\"2025-11-30\",\r
+
+      \    \"remarks\":\"remarks\"\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

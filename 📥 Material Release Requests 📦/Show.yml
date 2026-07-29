@@ -1,0 +1,43 @@
+info:
+  name: Show
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{base}}/material-release-requests/3"
+  headers:
+    - name: Branch
+      value: "1"
+  params:
+    - name: transfer_code
+      value: "006"
+      type: query
+      disabled: true
+    - name: warehouse_code
+      value: "1"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+    - name: created_by
+      value: "1"
+      type: query
+      disabled: true
+    - name: status
+      value: pending
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

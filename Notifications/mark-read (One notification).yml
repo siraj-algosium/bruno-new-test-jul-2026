@@ -1,0 +1,20 @@
+info:
+  name: mark-read (One notification)
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/notifications/3f4cdf42-8e01-447d-a9a6-669a8b2f01b5/mark-read"
+  headers:
+    - name: branch
+      value: "1"
+  auth:
+    type: bearer
+    token: 2299|Pwg4GQbMQjb413kAM4T3r2zgUIsehh7ncFwMFUYp02c2a4a0
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

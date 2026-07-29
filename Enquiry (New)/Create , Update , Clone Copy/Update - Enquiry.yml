@@ -1,0 +1,53 @@
+info:
+  name: Update - Enquiry
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/enquiries/247"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+        "is_eoi":false,
+        "enquiry_type": 1,
+        "log_category": 1,
+        "scopes": [2, 5],
+        "priority": 1,
+        "approver":1,
+
+        "customer_id": 6,
+        "client_id": 100,
+        "customer_reference": "desc",
+        "customer_contacts":[5],
+        "customer_contact_default":5,
+
+        "project_title": "SCOPE 2",
+        "tender_no": "12456",
+        "description": "desc1",
+        "country_code": 2, //optional
+        "region": "dafa", //optional
+
+        "received_date": "2025-09-27",
+        "last_date": "2025-10-11",
+        "next_followup_date": "2025-10-01",//optional
+        "follow_up_person": 35,//optional
+
+        "estimation_coordinator": 1,
+        "proposal_engineer": 1,
+        "sales_engineer": 1,
+        
+        "remarks": "rdddr",//optional
+        "attachments":null //optional
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

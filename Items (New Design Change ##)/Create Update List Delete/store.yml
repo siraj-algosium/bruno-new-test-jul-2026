@@ -1,0 +1,37 @@
+info:
+  name: store
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/items"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"code\":\"IM004\",\r
+
+      \    \"name\":\"Item8\",\r
+
+      \    \"type\":\"Service\",\r
+
+      \    \"status\":\"active\",\r
+
+      \    \"item_category_id\":2,\r
+
+      \    \"uom_id\":6,\r
+
+      \    \"batch_wise_booking\":false\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

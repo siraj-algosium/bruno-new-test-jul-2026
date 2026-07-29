@@ -1,0 +1,35 @@
+info:
+  name: Update Activity
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base}}/projects/31/task-manager/activities/1"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"planning_subtask_id\":63,\r
+
+      \    \"name\":\"Activity 1\",\r
+
+      \    \"description\":\"dfffaff\",\r
+
+      \    \"planned_start_date\":\"2025-06-04\",\r
+
+      \    \"planned_end_date\":\"2025-06-11\",\r
+
+      \    \"assigned_engineer\":\"1\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

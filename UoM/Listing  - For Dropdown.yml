@@ -1,0 +1,50 @@
+info:
+  name: Listing  - For Dropdown
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/uom?getAll=true?name=&code=&classification=&is_base_unit=&status="
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: name
+      value: ""
+      type: query
+    - name: code
+      value: ""
+      type: query
+    - name: classification
+      value: ""
+      type: query
+    - name: is_base_unit
+      value: ""
+      type: query
+    - name: status
+      value: ""
+      type: query
+  auth:
+    type: bearer
+    token: 2540|5wGsNjlJpMYTgDuStx4xzRIU3Ax34jcSyfXAutoTe21508f1
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        test('Status code is 2xx', () => {
+            expect(res.getStatus()).within(200, 299);
+        });
+        test('Status code is 2xx', () => {
+            expect(res.getStatus()).within(200, 299);
+        });
+        test('Status code is 3xx', () => {
+            expect(res.getStatus()).within(300, 399);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

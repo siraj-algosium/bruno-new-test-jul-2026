@@ -1,0 +1,44 @@
+info:
+  name: "Listing "
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{base}}/item?type=&status=&item_category_name=&sortCol=&sortOrder="
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: name
+      value: "1"
+      type: query
+      disabled: true
+    - name: code
+      value: ITSP002
+      type: query
+      disabled: true
+    - name: type
+      value: ""
+      type: query
+    - name: status
+      value: ""
+      type: query
+    - name: item_category_name
+      value: ""
+      type: query
+    - name: sortCol
+      value: ""
+      type: query
+    - name: sortOrder
+      value: ""
+      type: query
+  auth:
+    type: bearer
+    token: 2540|5wGsNjlJpMYTgDuStx4xzRIU3Ax34jcSyfXAutoTe21508f1
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

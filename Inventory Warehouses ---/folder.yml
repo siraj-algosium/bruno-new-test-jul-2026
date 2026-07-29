@@ -1,0 +1,7 @@
+info:
+  name: Inventory Warehouses ***
+  type: folder
+  seq: 19
+
+request:
+  auth: inherit

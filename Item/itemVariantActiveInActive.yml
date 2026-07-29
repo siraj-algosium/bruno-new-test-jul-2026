@@ -1,0 +1,23 @@
+info:
+  name: itemVariantActiveInActive
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{base}}/itemVariantActiveInActive/1"
+  body:
+    type: json
+    data: |-
+      {
+          "status":"inactive"
+      }
+  auth:
+    type: bearer
+    token: ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

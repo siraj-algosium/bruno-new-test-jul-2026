@@ -1,0 +1,37 @@
+info:
+  name: Create Table Widget (enquiry)
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/dashboard/widgets"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: branch
+      value: "{{branch_id}}"
+  body:
+    type: json
+    data: |-
+      {
+        "module_key": "enquiry",
+        "saved_filter_id": 2,
+        "widget_type": "table",
+        "title": "Filtered Records Table",
+        "settings": {
+          "columns": ["log_no", "project_title", "statusName", "priority", "enquiry_reg_date"],
+          "per_page": 10,
+          "sort_col": "enquiry_reg_date",
+          "sort_order": "DESC"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

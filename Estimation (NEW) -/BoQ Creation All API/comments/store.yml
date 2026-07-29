@@ -1,0 +1,29 @@
+info:
+  name: store
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/boq-creation/items/22/comments"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":88,\r
+
+      \    \"estimation_boq_creation_id\":2,\r
+
+      \    \"comment\":\"Second Review Comment\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

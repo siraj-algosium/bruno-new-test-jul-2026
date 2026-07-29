@@ -1,0 +1,7 @@
+info:
+  name: manage buyout
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

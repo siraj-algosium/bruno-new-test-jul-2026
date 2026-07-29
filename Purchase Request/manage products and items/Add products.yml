@@ -1,0 +1,26 @@
+info:
+  name: Add products
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/1/store-items-and-products"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "type":"bom",
+          "structure_id": null,
+          "bom_main_id":38
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,61 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/estimations"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: |
+      {
+        "prepared_by": "1",
+        "request_date": "2024-08-06",
+        "team_leader": 1,
+        "reviewer": 1,
+        "approver": 1,
+        "status": "pending",
+        "enquiry_id": 26,
+        "internal_revision": "1",
+        "due_date": "2024-11-25",
+        "boq_creation": {
+          "prepared_by": 1,
+          "reviewer": 1,
+          "approver": 1,
+          "created_date": "2024-11-14",
+          "due_date": "2025-11-14"
+        },
+        "boq_sales": {
+          "prepared_by": 1,
+          "reviewer": 1,
+          "approver": 1,
+          "created_date": "2024-11-17",
+          "due_date": "2024-11-20",
+          "internal_revision": 1,
+          "revision_number": 1
+        },
+        "cost_estimation": {
+          "prepared_by": 1,
+          "reviewer": 1,
+          "approver": 1,
+          "created_date": "2024-11-20",
+          "internal_revision": 1,
+          "revision_number": 1,
+          "due_date": "2024-11-25",
+          "currency": 1,
+          "margin_percentage": 1
+        }
+      }
+  auth:
+    type: bearer
+    token: 2215|JhUvdsm6NvLgoCTLCxE92o5QrVtm9gXQZoPjlhg5121181fd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

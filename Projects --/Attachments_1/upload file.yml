@@ -1,0 +1,31 @@
+info:
+  name: upload file
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/2/consumable-allocation/attachments"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: multipart-form
+    data:
+      - name: attachment
+        type: file
+        value:
+          - /home/venis/Pictures/Screenshots/Screenshot from 2025-07-03 16-17-42.png
+      - name: file_display_name
+        type: text
+        value: custom file namesss
+      - name: type
+        type: text
+        value: documenty tyep
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

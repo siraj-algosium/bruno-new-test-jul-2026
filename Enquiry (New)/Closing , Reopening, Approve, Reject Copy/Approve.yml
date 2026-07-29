@@ -1,0 +1,20 @@
+info:
+  name: Approve
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/53568/approve"
+  headers:
+    - name: branch
+      value: "1"
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

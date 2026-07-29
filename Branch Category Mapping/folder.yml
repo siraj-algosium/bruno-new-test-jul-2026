@@ -1,0 +1,7 @@
+info:
+  name: Branch Category Mapping
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

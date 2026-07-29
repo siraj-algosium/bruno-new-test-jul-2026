@@ -1,0 +1,27 @@
+info:
+  name: store Copy
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/inventory-warehouses/2/zones"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"{{zone_name}}\",\r
+
+      \    \"description\":\"Desc\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

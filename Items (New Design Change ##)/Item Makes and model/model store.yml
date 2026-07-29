@@ -1,0 +1,25 @@
+info:
+  name: model store
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base1}}/items/146/makes/3/models"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"model_number\" : \"qwe123\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

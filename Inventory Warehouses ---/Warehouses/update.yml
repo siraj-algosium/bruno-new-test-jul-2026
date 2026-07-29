@@ -1,0 +1,35 @@
+info:
+  name: update
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base}}/inventory-warehouses/1"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Warehouse 1\",\r
+
+      \    \"location\":\"India\",\r
+
+      \    \"address\":\"9,Tvm,Kerala\",\r
+
+      \    \"description\":\"Desc\",\r
+
+      \    \"contact_person_id\":2,\r
+
+      \    \"status\":false\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

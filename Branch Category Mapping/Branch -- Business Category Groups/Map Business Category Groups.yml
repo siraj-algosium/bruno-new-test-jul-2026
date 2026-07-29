@@ -1,0 +1,28 @@
+info:
+  name: Map Business Category Groups
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/branch/11/business-category-groups"
+  headers:
+    - name: branch
+      value: "{{branch_id}}"
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "business_category_group_ids": [2, 3]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

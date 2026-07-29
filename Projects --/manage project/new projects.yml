@@ -1,0 +1,44 @@
+info:
+  name: new projects
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/projects/new"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: per_page
+      value: "1"
+      type: query
+      disabled: true
+    - name: page
+      value: "30"
+      type: query
+      disabled: true
+    - name: project_name
+      value: ""
+      type: query
+      disabled: true
+    - name: project_id
+      value: "2"
+      type: query
+      disabled: true
+    - name: project_manager
+      value: ad
+      type: query
+      disabled: true
+    - name: filter
+      value: eyJjb2RlIjp7ImZpbHRlcl90eXBlIjoiaW5jbHVkZSIsInZhbHVlIjoiNTAifX0K
+      type: query
+      description: '{"code":{"filter_type":"include","value":"50"}}'
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

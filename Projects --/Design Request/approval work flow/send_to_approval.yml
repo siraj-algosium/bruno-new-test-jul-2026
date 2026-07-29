@@ -1,0 +1,27 @@
+info:
+  name: send_to_approval
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/project_design_request/17/send_to_approval"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"approver_id\":156,\r
+
+      \    \"remark\":\"aa\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,20 @@
+info:
+  name: all details
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base}}/bom-templates-details/3"
+  headers:
+    - name: branch
+      value: "11"
+  auth:
+    type: bearer
+    token: 2540|5wGsNjlJpMYTgDuStx4xzRIU3Ax34jcSyfXAutoTe21508f1
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

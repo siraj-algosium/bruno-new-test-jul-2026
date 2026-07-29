@@ -1,0 +1,27 @@
+info:
+  name: Template Attributes add
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{base}}/bom-templates/1/attributes"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"bom_attribute_ids\" : [38,37,36,35],\r
+
+      \    \"unselected_attribute_ids\" : [10]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

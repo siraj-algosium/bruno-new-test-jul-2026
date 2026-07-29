@@ -1,0 +1,53 @@
+info:
+  name: Store - Enquiry
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/enquiries"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+        "is_eoi":true,
+        "enquiry_type": 1,
+        "log_category": 1,
+        "scopes": [2,5],
+        "priority": 1,
+        "approver":1,
+
+        "customer_id": 1,
+        "client_id": 4,
+        "customer_reference": "VeniS 12 345",
+        "customer_contacts":[1],
+        "customer_contact_default":1,
+
+        "project_title": "Customer Client testing 1",
+        "tender_no": "venis 12345d",
+        "description": "desc1",
+        "country_code": 2, //optional
+        "region": "dafa", //optional
+
+        "received_date": "2025-11-01",
+        "last_date": "2026-10-11",
+        "next_followup_date": "2025-10-01",//optional
+        "follow_up_person": 1,//optional
+
+        "estimation_coordinator": 1,
+        "proposal_engineer": 1,
+        "sales_engineer": 1,
+        
+        "remarks": "rdddr",//optional
+        "followup_watchers": [1,2,3]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

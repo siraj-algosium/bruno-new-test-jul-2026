@@ -1,0 +1,53 @@
+info:
+  name: load vendor quotation
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/rfq/9/quotation/vendor/44"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"vendor_id\": 59,\r
+
+      \    \"delivery_term_id\":1,\r
+
+      \    \"payment_term_id\":3,\r
+
+      \    \"sea_freight\":10.59,\r
+
+      \    \"customs_duty\":30.59,\r
+
+      \    \"customes_clearance_charges\":123.59,\r
+
+      \    \"local_transportation_charges\":456.59,\r
+
+      \    \"delivery_time\":\"about 59 days\",\r
+
+      \    \"availability\":\"test 59\",\r
+
+      \    \"remarks\":\"super 59\",\r
+
+      \    \"items\":[\r
+
+      \        {\"id\":13, \"unit_price\":100.59},\r
+
+      \        {\"id\":12, \"unit_price\":100.59},\r
+
+      \        {\"id\":11, \"unit_price\":100.59}\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

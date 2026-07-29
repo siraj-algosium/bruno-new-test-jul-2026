@@ -1,0 +1,18 @@
+info:
+  name: List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/contract-reviews/412/attachmentshttps://datnext-dev-api.algosium.com/api/contract-reviews/412/attachments"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: View
+  type: http
+  seq: 27
+
+http:
+  method: GET
+  url: "{{base}}/enquiries/665/view"
+  headers:
+    - name: branch-number
+      value: "101"
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

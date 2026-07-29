@@ -1,0 +1,27 @@
+info:
+  name: Dupliate Single Bom NOT USED
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base}}/boq-creation/boms/6/duplicate"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":4,\r
+
+      \    \"estimation_boq_creation_id\":2\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,37 @@
+info:
+  name: Attachment upload
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/project_design_request/1/attachments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: test
+      - name: type
+        type: text
+        value: test
+      - name: attachment
+        type: file
+        value:
+          - /C:/Users/sreyas/Pictures/Screenshots/Screenshot 2025-03-27 094456.png
+      - name: category
+        type: text
+        value: design
+      - name: category
+        type: text
+        value: reference
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

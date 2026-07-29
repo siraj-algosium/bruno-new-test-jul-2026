@@ -1,0 +1,27 @@
+info:
+  name: resolve
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base}}/projects/3/comments/item/13/resolve"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\":\"hi test comment 123\",\r
+
+      \    \"project_item_id\":13\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

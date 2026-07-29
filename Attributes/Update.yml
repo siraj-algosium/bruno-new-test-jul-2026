@@ -1,0 +1,31 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base}}/attributes/1"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"attr1",
+          "tags":"attr-tag",
+          "type":"number",
+          "measurement_id":"1",
+          "unit_id":1,
+          "values_json_array":["aa","yyy","1","kk"],
+          "validation":{"num_min":"2", "num_max":"100"},
+          "description":"descrip2",
+        "display_name":"Attr3"
+      }
+  auth:
+    type: bearer
+    token: 478|xyjqxE7GSvRqiGlmyrES8wMXBcT1zvAx6Leo8xGce3891bc0
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

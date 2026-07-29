@@ -1,0 +1,28 @@
+info:
+  name: Delete Item Multi
+  type: http
+  seq: 12
+
+http:
+  method: DELETE
+  url: "{{base}}/boq-sale/items"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":4,
+          "estimation_boq_sale_id":2,
+          "boq_sale_item_ids":[20]
+      }
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,25 @@
+info:
+  name: update selected vendors
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{base}}/rfq/27/vendors"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"vendor_ids\":[\"43\",\"44\",\"45\"]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

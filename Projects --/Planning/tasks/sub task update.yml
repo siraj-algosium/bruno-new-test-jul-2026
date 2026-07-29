@@ -1,0 +1,31 @@
+info:
+  name: sub task update
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base}}/projects/24/project-planning/sub-tasks/46"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"percentage\":20,\r
+
+      \    \"planned_start_date\":\"2025-06-02\",\r
+
+      \    \"planned_end_date\":\"2025-06-30\",\r
+
+      \    \"assigned_engineer\":2\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

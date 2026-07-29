@@ -1,0 +1,60 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/vendor/2"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |
+      {
+        "name": "aa1",
+        "vendor_id": "11",
+        "entry_date": "2024-10-12",
+        "type": "vendor",
+        "address": "aa",
+        "city": "tvm",
+        "mobile": "15772",
+        "email": "rtt@tt.com",
+        "country": 1,
+        "contact_person": "anup",
+        "contact_number": "5688",
+        "status": "active",
+        "reg_date": "2024-10-12",
+        "product_category": 1,
+        "trade_lic_no": "e44",
+        "tin_tan_no": "9656",
+        "major_clients": "pepsi",
+        "goods_category": 1,
+        "qc_reviewer": 1,
+        "reviewer": 1,
+        "doc_reviewer": 1,
+        "approver": 1,
+        "attachment_arr": [
+          {
+            "fileName": "tt",
+            "displayFileName": "tt",
+            "type": "Approval, Re-Approval Form"
+          },
+          {
+            "id": 1,
+            "fileName": "tt22",
+            "displayFileName": "tt",
+            "type": "Bank Details"
+          }
+        ]
+      }
+  auth:
+    type: bearer
+    token: 2540|5wGsNjlJpMYTgDuStx4xzRIU3Ax34jcSyfXAutoTe21508f1
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

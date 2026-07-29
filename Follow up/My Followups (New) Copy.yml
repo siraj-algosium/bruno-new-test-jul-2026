@@ -1,0 +1,51 @@
+info:
+  name: My Followups (New) Copy
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/followUp/my-follow-ups"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: subject
+      value: "1"
+      type: query
+      disabled: true
+    - name: enquiry_log_no
+      value: TX24001A
+      type: query
+      disabled: true
+    - name: complete_remark
+      value: ""
+      type: query
+      disabled: true
+    - name: next_date_start
+      value: 2024-11-01
+      type: query
+      disabled: true
+    - name: next_date_end
+      value: 2024-11-30
+      type: query
+      disabled: true
+    - name: created_at_start
+      value: 2024-11-14
+      type: query
+      disabled: true
+    - name: created_at_end
+      value: 2024-11-14
+      type: query
+      disabled: true
+    - name: status
+      value: completed
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

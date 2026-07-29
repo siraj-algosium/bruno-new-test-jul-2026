@@ -1,0 +1,49 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/productPreset/1"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"preset1",
+          "product_id":1,
+          "single_assembled":"single",
+          "status":"active",
+          "component_arr":[
+              {
+                  "component_id":1,
+                  "attr_arr":[{
+                      "1":"558",
+                      "2":"819",
+                    "4":"646"
+                  }]
+              },
+              {
+                  "component_id":2,
+                  "attr_arr":[{
+                      "1":"188",
+                      "2":"689"
+                  }]
+              },
+            {
+                  "component_id":3,
+                  "attr_arr":[{
+                      "1":"200"
+                  }]
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: Q7Uvwdcc9NsWzU29O2gU2tE5CNU0UHc4XKx0Y6Nt7603bbfd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

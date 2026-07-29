@@ -1,0 +1,21 @@
+info:
+  name: Store - Initiate Transfer Creation
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base}}/inventory-inter-transfers"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"warehouse_id\":10\r\n}\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

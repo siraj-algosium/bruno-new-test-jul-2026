@@ -1,0 +1,26 @@
+info:
+  name: Update Bom Quantity
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{base}}/boq-creation/boms/25/quantity"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":102,
+          "estimation_boq_creation_id":7,
+          "quantity":2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

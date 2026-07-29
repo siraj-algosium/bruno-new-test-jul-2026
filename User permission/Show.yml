@@ -1,0 +1,20 @@
+info:
+  name: Show
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/userPermissions/1"
+  headers:
+    - name: branch
+      value: "11"
+  auth:
+    type: bearer
+    token: ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

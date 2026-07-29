@@ -1,0 +1,39 @@
+info:
+  name: Customer Contacts
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{base}}/customerContactsLW?name=ajay&page=1"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/ecmascript
+  params:
+    - name: name
+      value: ajay
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: exclude_ids
+      value: "3"
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "2"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

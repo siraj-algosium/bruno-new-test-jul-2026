@@ -1,0 +1,21 @@
+info:
+  name: Template Attributes display order update
+  type: http
+  seq: 11
+
+http:
+  method: PATCH
+  url: "{{base}}/bom-templates/1/attributes/35/display-order"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r\n    \"display_order\" : 2\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

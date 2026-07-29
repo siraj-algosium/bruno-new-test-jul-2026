@@ -1,0 +1,27 @@
+info:
+  name: finance-head
+  type: http
+  seq: 22
+
+http:
+  method: POST
+  url: "{{base}}/purchase-order/28/update-status/finance-head"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"is_reviewed\":1,\r
+
+      \    \"comment\":\"wer\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

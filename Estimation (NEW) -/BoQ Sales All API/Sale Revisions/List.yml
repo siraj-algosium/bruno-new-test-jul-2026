@@ -1,0 +1,22 @@
+info:
+  name: List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/estimations/102/boq-sale-revisions?page"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: page
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

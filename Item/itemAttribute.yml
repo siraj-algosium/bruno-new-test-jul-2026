@@ -1,0 +1,33 @@
+info:
+  name: itemAttribute
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/itemAttribute"
+  body:
+    type: json
+    data: |
+      {
+        "item": 1,
+        "attr_arr": [
+          {
+            "name": "Attr1",
+            "value_arr": [
+              // {
+              //   "value": "hh"
+              // }
+            ],
+            "value_del_ids":[1]
+          }
+        ],
+        "attr_del_ids": [1]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

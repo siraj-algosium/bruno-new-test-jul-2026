@@ -1,0 +1,22 @@
+info:
+  name: Login Copy
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/login"
+  body:
+    type: json
+    data: |-
+      {
+        "username": "linson",
+        "password": "linson@1234"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

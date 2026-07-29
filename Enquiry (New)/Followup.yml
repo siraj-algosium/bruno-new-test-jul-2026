@@ -1,0 +1,48 @@
+info:
+  name: Followup
+  type: http
+  seq: 18
+
+http:
+  method: POST
+  url: "{{base}}/followUp"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: multipart-form
+    data:
+      - name: subject
+        type: text
+        value: "3"
+      - name: remark
+        type: text
+        value: test
+      - name: next_date
+        type: text
+        value: 2025-04-22
+      - name: reminder_date
+        type: text
+        value: 2025-05-03
+      - name: enquiry_id
+        type: text
+        value: "35"
+      - name: quote_value
+        type: text
+        value: ""
+      - name: quote_currency
+        type: text
+        value: ""
+      - name: attachments[]
+        type: file
+        value:
+          - /home/venis/Pictures/Screenshots/Screenshot from 2025-04-17 16-00-44.png
+          - /home/venis/Pictures/Screenshots/Screenshot from 2025-04-21 12-34-04.png
+          - /home/venis/Pictures/Screenshots/Screenshot from 2025-04-21 12-00-56.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

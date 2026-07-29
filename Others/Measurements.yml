@@ -1,0 +1,17 @@
+info:
+  name: Measurements
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{base}}/measurements"
+  auth:
+    type: bearer
+    token: 2175|HifXTe4qHczB0YZPuoJwZ8abEsntn3HxWKQkBSXO4dd90656
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

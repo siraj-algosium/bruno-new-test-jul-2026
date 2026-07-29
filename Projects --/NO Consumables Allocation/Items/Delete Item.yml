@@ -1,0 +1,18 @@
+info:
+  name: Delete Item
+  type: http
+  seq: 8
+
+http:
+  method: DELETE
+  url: "{{base}}/projects/2/purchase-request/2/products/163/consumables/385"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

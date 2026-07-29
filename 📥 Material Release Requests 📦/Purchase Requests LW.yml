@@ -1,0 +1,49 @@
+info:
+  name: Purchase Requests LW
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/purchaseRequestsLW?pr_type=project&project_id=59&status=approved"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: exclude_ids
+      value: "17"
+      type: query
+      description: pass the enquiry id here
+      disabled: true
+    - name: name
+      value: "0001"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "5"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: pr_type
+      value: project
+      type: query
+      description: stock | general | project
+    - name: project_id
+      value: "59"
+      type: query
+      description: "* Required for Project pr type"
+    - name: status
+      value: approved
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

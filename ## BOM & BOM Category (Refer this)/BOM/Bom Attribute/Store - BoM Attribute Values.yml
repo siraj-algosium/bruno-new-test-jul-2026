@@ -1,0 +1,59 @@
+info:
+  name: Store - BoM Attribute Values
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/boms/13/save-attributes"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"description\": \"ddddd\",\r
+
+      \    \"attributes\": [\r
+
+      \        {\r
+
+      \            \"bom_main_attribute_id\":32,\r
+
+      \            \"bom_attribute_id\": \"1\",\r
+
+      \            \"text_value\": \"Snapdragon 8\"    \r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"bom_main_attribute_id\":35,\r
+
+      \            \"bom_attribute_id\": \"2\",\r
+
+      \            \"text_value\": \"test\"    \r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"bom_main_attribute_id\":37,\r
+
+      \            \"bom_attribute_id\": \"6\",\r
+
+      \            \"bom_attribute_values_id\":\"2\"\r
+
+      \        }\r
+
+      \  ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

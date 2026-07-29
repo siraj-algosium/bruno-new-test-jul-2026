@@ -1,0 +1,25 @@
+info:
+  name: clear vendors in product
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/1/products/134/vendors/clear-all"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "// {\r
+
+      //   \"vendor_ids\": [1, 2, 41, 65]\r
+
+      // }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

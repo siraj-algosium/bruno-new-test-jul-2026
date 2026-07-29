@@ -1,0 +1,51 @@
+info:
+  name: save-account-overheads
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/boq-cost/1/items/save-account-overheads"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\": 106,\r
+
+      \    \"overhead_alloc_method\": \"per_unit\", // per_unit\r
+
+      \    \"overhead_items\": [\r
+
+      \        {\r
+
+      \            \"category\": \"admin\",\r
+
+      \            \"desc\": \"admin related charges\",\r
+
+      \            \"amount\": 110.00\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"category\": \"others\",\r
+
+      \            \"desc\": \"utility charges\",\r
+
+      \            \"amount\": 60.00\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

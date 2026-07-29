@@ -1,0 +1,24 @@
+info:
+  name: Approver item verify
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/2/items/372/approver-verify"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "is_approval_verified": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,60 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/contract-reviews/create"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "enquiry_id": 49839,
+          "startDate": "2025-07-11",
+          "endDate": "2025-07-11",
+          "deliveryDate": "2025-07-24",
+          "contractReviewActions": [
+              {
+                  "reqAction": "test 1",
+                  "toBeDoneBy": "1",
+                  "status": "completed",
+                  "id": "81"
+              }
+          ],
+          // "finApprover": 1,
+          // "comReviewer": 1,
+          // "techReviewer": 1,
+          "remarks": null,
+          "poNumber": "5555",
+          "paymentTerms": "Credit",
+          "paymentDays": 109,
+          "deliveryTerms": "DDP",
+          "project_manager": 1,
+          "loiNo": "5555555",
+          "other": null,
+          "revFullfillProject": null,
+          "revDiffTenderOrder": null,
+          "revDocumentClient": null,
+          "revRequirementResolved": null,
+          "revCommTenderOrder": null,
+          "insWorkComp": null,
+          "insMotorLiab": null,
+          "insProfIndem": null,
+          "insGenTplCar": null,
+          "bankAdvPay": null,
+          "bankPerfGrnty": null,
+          "bankWrtyGrnty": null,
+          "bankKycReq": null,
+          "bankCreditApp": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,25 @@
+info:
+  name: Add BOM
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/items"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "bom_main_id":31,
+          "type":"bom"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

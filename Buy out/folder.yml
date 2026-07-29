@@ -1,0 +1,7 @@
+info:
+  name: Buy out
+  type: folder
+  seq: 39
+
+request:
+  auth: inherit

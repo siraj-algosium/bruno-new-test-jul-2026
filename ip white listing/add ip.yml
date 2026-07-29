@@ -1,0 +1,27 @@
+info:
+  name: add ip
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/whitelisted-ips"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"ip_address\": \"157.51.237.240\",\r
+
+      \    \"label\": \"sreyas mobile wifi\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

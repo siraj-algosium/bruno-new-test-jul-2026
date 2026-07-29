@@ -1,0 +1,54 @@
+info:
+  name: Inventory Locations LW (For location filter)
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{base}}/inventoryLocationsLW?per_page=100&status=true&warehouse_id=1"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: exclude_ids
+      value: "17"
+      type: query
+      description: To exclude the selected items from the next result
+      disabled: true
+    - name: name
+      value: W1Z
+      type: query
+      disabled: true
+    - name: per_page
+      value: "100"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: name_field_source
+      value: location_id
+      type: query
+      disabled: true
+    - name: type
+      value: warehouse
+      type: query
+      description: warehouse|zone|rack|shelf|bin
+      disabled: true
+    - name: status
+      value: "true"
+      type: query
+      description: true|false
+    - name: warehouse_id
+      value: "1"
+      type: query
+      description: To filter locations based on warehouse
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

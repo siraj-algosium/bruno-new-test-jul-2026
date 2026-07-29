@@ -1,0 +1,31 @@
+info:
+  name: store attachments
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/purchase-request/1/attachments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: multipart-form
+    data:
+      - name: file_display_name
+        type: text
+        value: test
+      - name: type
+        type: text
+        value: qwe
+      - name: attachment
+        type: file
+        value:
+          - postman-cloud:///1f02bd58-6fc3-4770-919f-b616d7f3f32e
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

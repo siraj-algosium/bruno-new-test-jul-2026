@@ -1,0 +1,26 @@
+info:
+  name: Template (Save new or Replace existing) Copy
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{base}}/dashboard/widgets/template"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: branch
+      value: "{{branch_id}}"
+  body:
+    type: json
+    data: |-
+      {
+          "template_id": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

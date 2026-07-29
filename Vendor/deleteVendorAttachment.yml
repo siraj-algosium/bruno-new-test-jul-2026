@@ -1,0 +1,23 @@
+info:
+  name: deleteVendorAttachment
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/deleteVendorAttachment"
+  body:
+    type: json
+    data: |-
+      {
+        "name":"1733919159.jpg"
+      }
+  auth:
+    type: bearer
+    token: ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

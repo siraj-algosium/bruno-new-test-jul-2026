@@ -1,0 +1,28 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base}}/bom-templates/3"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"Template 3",
+          "description":"description template 3",
+          "bom_category_id":4
+      }
+  auth:
+    type: bearer
+    token: 2540|5wGsNjlJpMYTgDuStx4xzRIU3Ax34jcSyfXAutoTe21508f1
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

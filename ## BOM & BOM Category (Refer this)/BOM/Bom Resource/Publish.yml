@@ -1,0 +1,18 @@
+info:
+  name: Publish
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{base}}/boms/4/publish"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

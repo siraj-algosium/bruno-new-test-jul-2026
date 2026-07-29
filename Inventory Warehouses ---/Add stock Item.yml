@@ -1,0 +1,30 @@
+info:
+  name: Add stock Item
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{base}}/inventory-stocks/add"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "item_id":82,
+          "item_variant_id":133,
+          "bom_main_id":null,
+          "location_id":"W1Z1R1",
+          "batch_no":"010058",
+          "warehouse_id":"W1",
+          "quantity":500
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

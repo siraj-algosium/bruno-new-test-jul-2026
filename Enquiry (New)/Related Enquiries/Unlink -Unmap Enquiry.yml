@@ -1,0 +1,21 @@
+info:
+  name: Unlink /Unmap Enquiry
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/enquiries/245/unlink-parent"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

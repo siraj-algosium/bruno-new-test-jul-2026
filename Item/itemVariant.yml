@@ -1,0 +1,33 @@
+info:
+  name: itemVariant
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/itemVariant"
+  body:
+    type: json
+    data: |
+      {
+        "item": 1,
+        "name": "Variant5",
+        "code": "VAR3",
+        "status": "active",
+        "attr_arr": [
+          {
+            "attribute": 1,
+            "attribute_value": 3
+          }
+        ],
+        "attr_del_ids": [1]
+      }
+  auth:
+    type: bearer
+    token: ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: Assign branch to users
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base}}/users/2/branch"
+  body:
+    type: json
+    data: |-
+      {
+          "branch_list":[1,2]
+      }
+  auth:
+    type: bearer
+    token: 1344|G8IPsB1jctpK3IQMxaj6Pv7knXd17EQoYKFlZGNqde37bdfb
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

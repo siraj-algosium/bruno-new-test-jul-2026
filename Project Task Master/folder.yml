@@ -1,0 +1,7 @@
+info:
+  name: Project Task Master
+  type: folder
+  seq: 33
+
+request:
+  auth: inherit

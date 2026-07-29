@@ -1,0 +1,83 @@
+info:
+  name: list
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/purchase-order?filter=ewoicG9fbm8iOiB7CiAgICAiZmlsdGVyX3R5cGUiOiAiaW5jbHVkZSIsCiAgICAidmFsdWVzIjogWzhdCiAgfQp9"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "1"
+      type: query
+      description: po_no, vendor_name, creator_name, created_at
+      disabled: true
+    - name: sort_col
+      value: vendor_name
+      type: query
+      disabled: true
+    - name: sort_order
+      value: ""
+      type: query
+      disabled: true
+    - name: po_no
+      value: PO
+      type: query
+      disabled: true
+    - name: vendor_name
+      value: "1"
+      type: query
+      disabled: true
+    - name: creator_name
+      value: dd
+      type: query
+      disabled: true
+    - name: filter
+      value: ewoicG9fbm8iOiB7CiAgICAiZmlsdGVyX3R5cGUiOiAiaW5jbHVkZSIsCiAgICAidmFsdWVzIjogWzhdCiAgfQp9
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  **Purpose:**
+  Retrieves a list of purchase orders from the ERP system. This endpoint supports filtering and sorting using query parameters, allowing users to fetch purchase orders based on various criteria such as status, vendor, creator, and more.
+
+  **Endpoint:**
+  `GET {{base}}/purchase-order`
+
+  **Query Parameters:**
+  - `closed` (optional): Filter by closed status. Example: `1` (closed)
+  - `per_page` (optional): Number of results per page. Example: `1`
+  - `sort_col` (optional): Column to sort results by. Example: `vendor_name`
+  - `po_no` (optional): Filter by purchase order number. Example: `5`
+  - `vendor_name` (optional): Filter by vendor name. Example: `1`
+  - `creator_name` (optional): Filter by creator name. Example: `dd`
+  - `processed` (optional): Filter by processed status. Example: `1`
+  - `pocessed` (optional): (Possible typo of 'processed') Filter by processed status. Example: `1`
+
+  **Headers:**
+  - `branch` (required): Branch identifier. Example: `11`
+
+  **Notes:**
+  - The `base` variable should be set in your environment to the root URL of the ERP API.
+  - At least the `branch` header is required for the request to succeed.
+  - Query parameters are optional and can be combined to refine the results.
+  - If both `processed` and `pocessed` are present, confirm with your API documentation which is correct.
+
+  **Typical Usage:**
+  Use this request to list, filter, and sort purchase orders for reporting, auditing, or operational purposes.

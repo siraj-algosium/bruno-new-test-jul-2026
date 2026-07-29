@@ -1,0 +1,37 @@
+info:
+  name: store comments
+  type: http
+  seq: 25
+
+http:
+  method: POST
+  url: "{{base}}/purchase-order/3/comments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\" : \"test\"\r
+
+      }\r
+
+      \r
+
+      //replay to a comment\r
+
+      // {\r
+
+      //     \"comment\" : \"test\",\r
+
+      //     \"comment_id\": 12\r
+
+      // }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

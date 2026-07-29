@@ -1,0 +1,33 @@
+info:
+  name: Update
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base}}/projects/3"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "project_title": "a sample project vv",
+          "project_manager": 2,
+          "description": "descriptions",
+          "start_date": "2025-01-01",
+          "end_date": "2025-12-12",
+          "scope_of_work": "test scope",
+          "team_lead":"5",
+          "reviewer_id":"",
+          "approver_id":"",
+          "creaters":[1,3,4]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

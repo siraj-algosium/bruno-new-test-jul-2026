@@ -1,0 +1,53 @@
+info:
+  name: Update
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{base}}/enquiries/3057"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |+
+      {
+        "enquiry_reg_date": "2025-10-17",
+        "project_title": "New Enquiry Sequence 1 updated 2",
+        "log_category": 67,
+        "scopes": [18],
+        "description": "desc1",
+        "is_eoi": false,
+        "enquiry_type": 1,
+        "priority": 1,
+        "approver": "",
+        "log_no": "CI252334",
+        "customer_id": 1,
+        "client_id": 1,
+        "customer_reference": "ddd",
+        "local_log_no": "",
+        "local_company": "",
+        "tender_no": "12456",
+        "country_code": 2,
+        "region": "dafa",
+        "received_date": "2025-10-16",
+        "last_date": "2026-10-11",
+        "estimation_coordinator": 1,
+        "proposal_engineer": 1,
+        "status": 1,
+        "remarks": "rdddr",
+        "sales_engineer": 1,
+        "customer_contacts": [1],
+        "customer_contact_default": 1,
+        "logIncrementId": "log_no_increment_id",
+        "followup_watchers": [1, 2, 3]
+      }
+
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

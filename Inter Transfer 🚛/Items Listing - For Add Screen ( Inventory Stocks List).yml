@@ -1,0 +1,107 @@
+info:
+  name: Items Listing - For Add Screen ( Inventory Stocks List)
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base}}/inventory-items-products/warehouse/1?sort_order=asc&sort_col=name"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: sort_order
+      value: asc
+      type: query
+    - name: sort_col
+      value: name
+      type: query
+    - name: warehouse_id
+      value: "3"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        let postBody = `{
+            "zone_id": {
+              "filter_type": "exclude",
+              "values": []
+            },
+            "rack_id": {
+                "filter_type": "include",
+                "values": []
+            },
+            "shelf_id": {
+                "filter_type": "include",
+                "values": []
+            },
+            "bin_id": {
+                "filter_type": "include",
+                "values":[]
+            },
+            "code": {
+                "filter_type": "include",
+                "values":[]
+            },
+            "item_variant_id": {
+                "filter_type": "include",
+                "values":[]
+            },
+            "name": {
+                "filter_type": "exclude",
+                "value":""
+            },
+            "description": {
+                "filter_type": "include",
+                "value":""
+            },
+            "category": {
+                "filter_type": "exclude",
+                "value":""
+            },
+            "total_qty": {
+                "filter_type": "less_than",
+                "value":""
+            },
+            "available_qty": {
+                "filter_type": "greater_than",
+                "value":""
+            },
+            "reserved_qty": {
+                "filter_type": "exact",
+                "value":""
+            },
+            "reserved_qty": {
+                "filter_type": "range",
+                "min":"",
+                "max":""
+            }
+        }`;
+
+        // Read the raw request body
+        let rawBody = req.getBody().raw;
+
+        // Encode to Base64
+        let encodedBody = btoa(postBody);
+
+        // Update the request URL with ?filter=...
+        let url = req.getUrl().toString().split("?")[0]; // base URL without query
+        req.getUrl() = url + "?filter=" + encodeURIComponent(encodedBody);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

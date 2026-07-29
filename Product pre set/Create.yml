@@ -1,0 +1,44 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/productPreset"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"preset5",
+          "product_id":1,
+          "single_assembled":"single",
+          "status":"active",
+          "type":"Service",
+          "component_arr":[
+              {
+                  "component_id":1,
+                  "attr_arr":[{
+                      "1":"558",
+                      "2":""
+                  }]
+              },
+              {
+                  "component_id":2,
+                  "attr_arr":[{
+                      "1":"188",
+                      "2":"689",
+                      "5":"388"
+                  }]
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: 1943|Q7Uvwdcc9NsWzU29O2gU2tE5CNU0UHc4XKx0Y6Nt7603bbfd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

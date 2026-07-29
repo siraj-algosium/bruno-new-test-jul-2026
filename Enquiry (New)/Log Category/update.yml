@@ -1,0 +1,27 @@
+info:
+  name: update
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base}}/logcategory/22"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Camp management\",\r
+
+      \    \"code\":\"CT\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

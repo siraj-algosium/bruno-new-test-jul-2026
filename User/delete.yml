@@ -1,0 +1,20 @@
+info:
+  name: delete
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{base}}/users/162"
+  headers:
+    - name: branch
+      value: "11"
+  auth:
+    type: bearer
+    token: 1344|G8IPsB1jctpK3IQMxaj6Pv7knXd17EQoYKFlZGNqde37bdfb
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

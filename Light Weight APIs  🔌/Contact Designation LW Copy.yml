@@ -1,0 +1,36 @@
+info:
+  name: Contact Designation LW Copy
+  type: http
+  seq: 27
+
+http:
+  method: GET
+  url: "{{base}}/customerContactDesignationsLW?page=1"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: name
+      value: BSS
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+    - name: exclude_ids
+      value: "3"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "2"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

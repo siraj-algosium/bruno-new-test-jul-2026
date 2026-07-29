@@ -1,0 +1,33 @@
+info:
+  name: Add-Item to Multiple BOMS
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/boq-creation/boms/add-item"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":14,\r
+
+      \    \"estimation_boq_creation_id\":8,\r
+
+      \    \"item_id\":5,\r
+
+      \    \"item_variant_id\":9,\r
+
+      \    \"boq_creation_bom_ids\":[16,17]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

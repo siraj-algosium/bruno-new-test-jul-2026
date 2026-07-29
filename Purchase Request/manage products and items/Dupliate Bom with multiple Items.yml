@@ -1,0 +1,63 @@
+info:
+  name: Dupliate Bom with multiple Items
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/1/products/101/duplicate-with-multiple-items"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"quantity\": \"3\",\r
+
+      \    \"items\": [\r
+
+      \        {\r
+
+      \            \"product_item_id\": \"275\",\r
+
+      \            \"boms\": [\r
+
+      \                {\r
+
+      \                    \"id\": 1,\r
+
+      \                    \"quantity\": 124\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"id\": 2,\r
+
+      \                    \"quantity\": 123\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"id\": 3,\r
+
+      \                    \"quantity\": 123\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

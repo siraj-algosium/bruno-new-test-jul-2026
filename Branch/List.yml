@@ -1,0 +1,48 @@
+info:
+  name: List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/branch?page=1?sortCol=name&sortOrder=DESC"
+  params:
+    - name: name
+      value: tt1
+      type: query
+      disabled: true
+    - name: address
+      value: add
+      type: query
+      disabled: true
+    - name: contact_number
+      value: "124"
+      type: query
+      disabled: true
+    - name: code
+      value: "1"
+      type: query
+      disabled: true
+    - name: email
+      value: ee@rr.com
+      type: query
+      disabled: true
+    - name: website
+      value: www
+      type: query
+      disabled: true
+    - name: sortCol
+      value: name
+      type: query
+    - name: sortOrder
+      value: DESC
+      type: query
+  auth:
+    type: bearer
+    token: 92|2osld2jKcNC5ZsskGOrkccanBun7PjRphNrSNWRQbb01f72e
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

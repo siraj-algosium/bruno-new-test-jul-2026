@@ -1,0 +1,18 @@
+info:
+  name: Delete
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{base}}/boq-sale/4/attachments/2"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

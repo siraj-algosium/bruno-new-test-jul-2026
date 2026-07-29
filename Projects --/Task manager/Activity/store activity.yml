@@ -1,0 +1,35 @@
+info:
+  name: store activity
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/projects/31/task-manager/activities"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"planning_subtask_id\":63,\r
+
+      \    \"name\":\"Activity 6\",\r
+
+      \    \"description\":\"dfffaff\",\r
+
+      \    \"planned_start_date\":\"2025-06-09\",\r
+
+      \    \"planned_end_date\":\"2025-06-30\",\r
+
+      \    \"assigned_engineer\":\"2\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

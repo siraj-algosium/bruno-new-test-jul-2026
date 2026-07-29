@@ -1,0 +1,35 @@
+info:
+  name: Customers LW
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/customersLW?page=1&perPage=1"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: name
+      value: si
+      type: query
+      disabled: true
+    - name: active
+      value: "true"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+    - name: perPage
+      value: "1"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

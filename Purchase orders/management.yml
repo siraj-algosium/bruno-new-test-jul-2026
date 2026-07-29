@@ -1,0 +1,21 @@
+info:
+  name: management
+  type: http
+  seq: 23
+
+http:
+  method: POST
+  url: "{{base}}/purchase-order/28/update-status/management"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"is_reviewed\":1\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

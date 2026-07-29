@@ -1,0 +1,24 @@
+info:
+  name: "Listing "
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/item-categories?name=Tabs"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: name
+      value: Tabs
+      type: query
+  auth:
+    type: bearer
+    token: 2540|5wGsNjlJpMYTgDuStx4xzRIU3Ax34jcSyfXAutoTe21508f1
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

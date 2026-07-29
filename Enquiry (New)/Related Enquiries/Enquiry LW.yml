@@ -1,0 +1,42 @@
+info:
+  name: Enquiry LW
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base}}/enquiriesLW?per_page=5&page=2&only_parents=true"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  params:
+    - name: project_title
+      value: scope
+      type: query
+      disabled: true
+    - name: log_no
+      value: CI252315
+      type: query
+      disabled: true
+    - name: per_page
+      value: "5"
+      type: query
+    - name: page
+      value: "2"
+      type: query
+    - name: exclude_ids
+      value: "394"
+      type: query
+      disabled: true
+    - name: only_parents
+      value: "true"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

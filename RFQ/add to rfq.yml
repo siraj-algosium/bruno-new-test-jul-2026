@@ -1,0 +1,21 @@
+info:
+  name: add to rfq
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/rfq/27/add-to-rfq"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"buyout_ids\": [37,36]\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

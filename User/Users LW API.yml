@@ -1,0 +1,69 @@
+info:
+  name: Users LW API
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{base}}/usersListLW?permission_filter=compare_quotation.approver&permission_filter=purchase-order.material-team-reviewer&permission_filter=purchase-order.project-team-reviewer&permission_filter=purchase-order.account-team-reviewer&permission_filter=purchase-order.finance-head-reviewer&permission_filter=purchase-order.management-reviewer"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: name
+      value: ""
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: enquiry.pending.approve
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: estimation.creation.creator
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: estimation.estimation-coordinator
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: consumable-allocation.reviewer
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: warehouse-setup.edit
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: compare_quotation.first_reviewer
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: compare_quotation.second_reviewer
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: compare_quotation.approver
+      type: query
+    - name: permission_filter
+      value: purchase-order.material-team-reviewer
+      type: query
+    - name: permission_filter
+      value: purchase-order.project-team-reviewer
+      type: query
+    - name: permission_filter
+      value: purchase-order.account-team-reviewer
+      type: query
+    - name: permission_filter
+      value: purchase-order.finance-head-reviewer
+      type: query
+    - name: permission_filter
+      value: purchase-order.management-reviewer
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

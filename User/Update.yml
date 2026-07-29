@@ -1,0 +1,57 @@
+info:
+  name: Update
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base}}/users/124?name=nn2&email=ee2@ee.com1&password=123&mobile=12345&phone=12&extension=12&designation=4&username=username45&defaultBranch=1"
+  params:
+    - name: name
+      value: nn2
+      type: query
+    - name: email
+      value: ee2@ee.com1
+      type: query
+    - name: password
+      value: "123"
+      type: query
+    - name: mobile
+      value: "12345"
+      type: query
+    - name: phone
+      value: "12"
+      type: query
+    - name: extension
+      value: "12"
+      type: query
+    - name: designation
+      value: "4"
+      type: query
+    - name: username
+      value: username45
+      type: query
+    - name: defaultBranch
+      value: "1"
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+          "name":"tt1",
+          "email":"rr15@tt.com",
+          "password":"123",
+          "designation":4,
+          "username":"uu15",
+          "branch_list":[1]
+
+      }
+  auth:
+    type: bearer
+    token: 1344|G8IPsB1jctpK3IQMxaj6Pv7knXd17EQoYKFlZGNqde37bdfb
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

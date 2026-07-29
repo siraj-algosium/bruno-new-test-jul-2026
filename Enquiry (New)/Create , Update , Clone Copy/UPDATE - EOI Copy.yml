@@ -1,0 +1,72 @@
+info:
+  name: UPDATE - EOI Copy
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/enquiries/3028"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: |
+      // {
+      //   "is_eoi":true,
+      //   "enquiry_type": 1,
+      //   "log_category": 1,
+      //   "priority": 1,
+      //   "approver":1,
+
+      //   "customer_id": 1,
+      //   "client_id": 1, //optional
+      //   "customer_reference": "ddddd0",
+      //   "customer_contacts":[1,2],
+
+      //   "project_title": "tests3",
+      //   "tender_no": "ddfadfdaf",
+      //   "description": "ddddd",
+      //   "country_code": 2, //optional
+      //   "region": "dafa", //optional
+
+      //   "received_date": "2025-04-26",
+      //   "last_date": "2025-04-30",
+      //   "next_followup_date": "2025-05-01",//optional
+      //   "follow_up_person": 35,//optional
+
+      //   "estimation_coordinator": 1,
+      //   "proposal_engineer": 1,
+      //   "sales_engineer": 1,
+        
+      //   "remarks": "rdddr",//optional
+      //   "attachments":null //optional
+      // }
+
+      {
+        "enquiry_reg_date": "2025-10-13",
+        "project_title": "EOI TESTING 2",
+        "log_category": 3,
+        "description": "test",
+        "is_eoi": true,
+        "enquiry_type": 1,
+        "customer_id": 8,
+        "client_id": 1,
+        "customer_reference": "contractor 1",
+        "country_code": 2,
+        "region": "Abu Dhabi",
+        "status": 1,
+        "remarks": null,
+        "sales_engineer": 2,
+        "customer_contacts": [7],
+        "customer_contact_default": 7,
+        "followup_watchers": [2, 4, 3],
+        "scopes":[12]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

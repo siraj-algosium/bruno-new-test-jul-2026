@@ -1,0 +1,31 @@
+info:
+  name: send-to-review
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{base}}/rfq/9/quotation/send-to-review"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"first_reviewer\": 3,\r
+
+      \    \"second_reviewer\":2,\r
+
+      \    \"approver\":10\r
+
+      }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

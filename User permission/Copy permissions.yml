@@ -1,0 +1,26 @@
+info:
+  name: Copy permissions
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/userPermissions/copy-branch-permissions"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+        "from_branch_id":11,
+        "to_branch_id": 66,
+        "selected_user_id" : 164
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

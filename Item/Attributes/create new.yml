@@ -1,0 +1,29 @@
+info:
+  name: create new
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/items/8/attribute"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\" : \"Color 7\",\r
+
+      \    \"show_name_in_description\": true,\r
+
+      \    \"code\" : \"test\"\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

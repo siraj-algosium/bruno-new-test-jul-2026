@@ -1,0 +1,51 @@
+info:
+  name: List
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/purchase-entry"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: grn_no
+      value: anode
+      type: query
+      disabled: true
+    - name: po_no
+      value: red
+      type: query
+      disabled: true
+    - name: vendor_name
+      value: ""
+      type: query
+      disabled: true
+    - name: created_by_name
+      value: ""
+      type: query
+      disabled: true
+    - name: invoice_no
+      value: ""
+      type: query
+      disabled: true
+    - name: status
+      value: ""
+      type: query
+      disabled: true
+    - name: entry_date_start
+      value: ""
+      type: query
+      disabled: true
+    - name: entry_date_end
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

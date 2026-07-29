@@ -1,0 +1,20 @@
+info:
+  name: Stage a Transfer Item
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{base}}/inventory-transfer-orders/26/items/12/stage"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

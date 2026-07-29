@@ -1,0 +1,18 @@
+info:
+  name: Delete Material Release Request
+  type: http
+  seq: 13
+
+http:
+  method: DELETE
+  url: "{{base}}/material-release-requests/1"
+  headers:
+    - name: Branch
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,31 @@
+info:
+  name: Patch Saved Filter Fields
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{base}}/dashboard/saved-filters/1/fields"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: branch
+      value: "{{branch_id}}"
+  body:
+    type: json
+    data: |-
+      {
+        "set": {
+          "customer_reference": { "filter_type": "include", "value": "REF-101" }
+        },
+        "remove": ["project_title"]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

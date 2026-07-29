@@ -1,0 +1,7 @@
+info:
+  name: Third party
+  type: folder
+  seq: 34
+
+request:
+  auth: inherit

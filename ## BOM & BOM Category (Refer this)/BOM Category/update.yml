@@ -1,0 +1,30 @@
+info:
+  name: update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{api_url}}/api/bom-categories/8"
+  headers:
+    - name: Branch
+      value: "1"
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"\",\r
+
+      \    \"description\":\"First Level Categoryy\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,18 @@
+info:
+  name: Template Items delete
+  type: http
+  seq: 14
+
+http:
+  method: DELETE
+  url: "{{base}}/bom-templates/1/items/1"
+  headers:
+    - name: Branch
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

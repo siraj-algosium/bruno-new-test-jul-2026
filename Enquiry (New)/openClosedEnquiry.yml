@@ -1,0 +1,23 @@
+info:
+  name: openClosedEnquiry
+  type: http
+  seq: 26
+
+http:
+  method: POST
+  url: "{{base}}/openClosedEnquiry/291"
+  body:
+    type: json
+    data: |-
+      {
+        "opening_remark":"rr22"
+      }
+  auth:
+    type: bearer
+    token: 2327|kxoNQdroy3RVMLTxKmoHDeKL3WwbVW4GyyDFWBmIe277d532
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

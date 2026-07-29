@@ -1,0 +1,21 @@
+info:
+  name: delete transaction currency
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{base}}/transaction-currency/1"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

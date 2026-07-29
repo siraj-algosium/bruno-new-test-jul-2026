@@ -1,0 +1,20 @@
+info:
+  name: List lite weight
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base}}/thirdPartyListLW"
+  headers:
+    - name: branch
+      value: "11"
+  auth:
+    type: bearer
+    token: 1352|ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

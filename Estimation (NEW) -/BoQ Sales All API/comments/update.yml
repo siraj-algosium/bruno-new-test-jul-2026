@@ -1,0 +1,25 @@
+info:
+  name: update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/boq-sale/items/66/comments/1"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\":\"updated the requirement\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

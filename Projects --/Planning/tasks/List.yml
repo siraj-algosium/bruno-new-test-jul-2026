@@ -1,0 +1,65 @@
+info:
+  name: List
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base}}/projects/29/project-planning/tasks?subtask_name=Sub Task 17"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: task_name
+      value: "22"
+      type: query
+      disabled: true
+    - name: code
+      value: ""
+      type: query
+      disabled: true
+    - name: assigned_engineer_name
+      value: ""
+      type: query
+      disabled: true
+    - name: subtask_name
+      value: Sub Task 17
+      type: query
+    - name: subtask_code
+      value: TC0005-9
+      type: query
+      disabled: true
+    - name: subtask_assigned_engineer_name
+      value: tt
+      type: query
+      disabled: true
+    - name: status
+      value: not_started
+      type: query
+      disabled: true
+    - name: sort_col
+      value: task_name
+      type: query
+      disabled: true
+    - name: sort_order
+      value: desc
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

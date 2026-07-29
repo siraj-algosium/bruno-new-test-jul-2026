@@ -1,0 +1,26 @@
+info:
+  name: Delete Bom Multi
+  type: http
+  seq: 16
+
+http:
+  method: DELETE
+  url: "{{base}}/boq-cost/boms"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":106,
+          "estimation_boq_cost_id":1,
+          "boq_cost_bom_ids":[3]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

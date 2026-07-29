@@ -1,0 +1,39 @@
+info:
+  name: comments
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{base}}/rfq/9/quotation/comments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\": \"test comment\"\r
+
+      }\r
+
+      \r
+
+      //replay comment params\r
+
+      // {\r
+
+      //     \"comment\": \"test 123 yyyy\",\r
+
+      //     \"comment_id\" :1\r
+
+      // }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

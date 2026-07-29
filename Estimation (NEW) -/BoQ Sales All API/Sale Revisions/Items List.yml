@@ -1,0 +1,124 @@
+info:
+  name: Items List
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/estimations/102/boq-sale-revisions/2/items"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: item_name
+      value: Item 5
+      type: query
+      disabled: true
+    - name: item_code
+      value: SECACA000
+      type: query
+      disabled: true
+    - name: item_varient_name
+      value: INTEL - Samsung
+      type: query
+      disabled: true
+    - name: item_category_name
+      value: Iphoneeee
+      type: query
+      disabled: true
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        test("Response status code is 200", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+
+        test("Response time is less than 200ms", function () {
+          expect(res.getResponseTime()).to.be.below(200);
+        });
+
+
+        test("Response has the required fields", function () {
+            const responseData = res.getBody();
+            
+            expect(responseData).to.be.an('object');
+            expect(responseData).to.have.property('id');
+            expect(responseData).to.have.property('name');
+            expect(responseData).to.have.property('description');
+            expect(responseData).to.have.property('parent_id');
+            expect(responseData).to.have.property('created_by');
+            expect(responseData).to.have.property('updated_by');
+            expect(responseData).to.have.property('created_at');
+            expect(responseData).to.have.property('updated_at');
+            expect(responseData).to.have.property('deleted_at');
+            expect(responseData).to.have.property('top_level_parent_id');
+        });
+
+
+        test("Id is a non-negative integer", function () {
+            const responseData = res.getBody();
+            
+            expect(responseData).to.be.an('object');
+            expect(responseData.data.id).to.be.a('number').and.to.satisfy((id) => id >= 0, "Id should be a non-negative integer");
+        });
+
+
+        test("Name and description are non-empty strings", function () {
+            const responseData = res.getBody();
+            
+            expect(responseData).to.be.an('object');
+            expect(responseData.name).to.be.a('string').and.to.have.lengthOf.at.least(1, "Name should not be empty");
+            expect(responseData.description).to.be.a('string').and.to.have.lengthOf.at.least(1, "Description should not be empty");
+        });
+        var template = `
+        <style type="text/css">
+            .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}
+            .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}
+            .tftable tr {background-color:#ffffff;}
+            .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}
+            .tftable tr:hover {background-color:#e0ffff;}
+        </style>
+
+        <table class="tftable" border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Parent ID</th>
+                <th>Created By</th>
+                <th>Updated By</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Deleted At</th>
+                <th>Top Level Parent ID</th>
+            </tr>
+            <tr>
+                <td>{{response.data.id}}</td>
+                <td>{{response.data.name}}</td>
+                <td>{{response.data.description}}</td>
+                <td>{{response.data.parent_id}}</td>
+                <td>{{response.data.created_by}}</td>
+                <td>{{response.data.updated_by}}</td>
+                <td>{{response.data.created_at}}</td>
+                <td>{{response.data.updated_at}}</td>
+                <td>{{response.data.deleted_at}}</td>
+                <td>{{response.data.top_level_parent_id}}</td>
+            </tr>
+        </table>
+        `;
+
+        function constructVisualizerPayload() {
+            return {response: res.getBody()};
+        }
+
+        pm.visualizer.set(template, constructVisualizerPayload());
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

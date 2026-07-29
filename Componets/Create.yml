@@ -1,0 +1,39 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/components"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"cmp32",
+          "tags":"cmp-tag",
+          "description":"ddd",
+          "attributes_arr":[
+              {
+                  "attribute_id":1,
+                  "show_when":{
+                      "and":[
+                          {
+                              "1":10
+                          }
+                      ]
+                  }
+              }
+          ],
+         "description":"pr25ygggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+        
+      }
+  auth:
+    type: bearer
+    token: 2367|oINcqKI2V0TbSqvqhTAIoy613m0FrBfzaIU38BEg39c0abee
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

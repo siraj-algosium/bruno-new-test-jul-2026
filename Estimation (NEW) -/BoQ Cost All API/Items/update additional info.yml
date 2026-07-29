@@ -1,0 +1,27 @@
+info:
+  name: update additional info
+  type: http
+  seq: 12
+
+http:
+  method: PUT
+  url: "{{base}}/boq-cost/items/6/additional-info"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_boq_cost_id\":1,\r
+
+      \    \"additional_info\":\"addteahi\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

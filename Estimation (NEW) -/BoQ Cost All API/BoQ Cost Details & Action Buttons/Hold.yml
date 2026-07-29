@@ -1,0 +1,24 @@
+info:
+  name: Hold
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{base}}/boq-cost/4/hold"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":102
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

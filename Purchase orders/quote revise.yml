@@ -1,0 +1,21 @@
+info:
+  name: quote revise
+  type: http
+  seq: 28
+
+http:
+  method: PUT
+  url: "{{base}}/purchase-order/15/items/59/quote-revise"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"comment\" : \"asd\"\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

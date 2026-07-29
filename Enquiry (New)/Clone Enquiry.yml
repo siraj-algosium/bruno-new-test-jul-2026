@@ -1,0 +1,54 @@
+info:
+  name: Clone Enquiry
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/297/clone"
+  body:
+    type: json
+    data: |-
+      {
+        "enquiry_reg_date": "2024-04-29",
+        "project_title": "tt",
+        "description": "dd",
+        "log_category": 1,
+        "enquiry_type": 1,
+        "priority": 1,
+        "contractor": 11,
+        "contractor_reference": "11",
+        "local_company": 1,
+        "tender_no": 11,
+        "country_code": 1,
+        "region": "12",
+        "received_date": "2024-04-23",
+        "last_date": "2001-01-02",
+        "estimation_coordinator": 1,
+        "proposal_engineer": 1,
+        "sales_engineer": 1,
+        "status": 8,
+        "remarks": "rr",
+        "next_followup_date": "2001-01-01",
+        "add_contact": "11",
+        "follow_up_person": 35,
+        "deleted_at": null,
+        "created_at": "2024-04-29T07:27:46.000000Z",
+        "updated_at": "2024-04-29T07:27:46.000000Z",
+        "log_no_increment_id": 26,
+        "closing_remark": null,
+        "closing_date": null,
+        "project_manager": 1,
+        "quote_currency": 1,
+        "quote_value": 1,
+        "project_manager_id": 1
+      }
+  auth:
+    type: bearer
+    token: 1352|ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,36 @@
+info:
+  name: bom-attributesLW
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base}}/bom-attributesLW?bom_template_id=21"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: name
+      value: attribute77
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: bom_template_id
+      value: "21"
+      type: query
+  auth:
+    type: bearer
+    token: 2828|jViUtnD6aIPaWjFMPoiTvpS2QXlNzusB8j2fOD6oe479970b
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

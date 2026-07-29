@@ -1,0 +1,25 @@
+info:
+  name: model delete
+  type: http
+  seq: 7
+
+http:
+  method: DELETE
+  url: "{{base1}}/items/146/makes/3/models/2"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"model_number\" : \"qwe123 - 456\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

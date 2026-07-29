@@ -1,0 +1,31 @@
+info:
+  name: Upload Attachment
+  type: http
+  seq: 21
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/463/attachment"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: multipart-form
+    data:
+      - name: attachment
+        type: file
+        value:
+          - /home/venis/Downloads/20mb.pdf
+      - name: type
+        type: text
+        value: test
+      - name: file_display_name
+        type: text
+        value: test
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

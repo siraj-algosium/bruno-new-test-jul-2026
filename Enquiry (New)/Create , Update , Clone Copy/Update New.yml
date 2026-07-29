@@ -1,0 +1,53 @@
+info:
+  name: Update New
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{base}}/enquiries/601"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |
+      {
+        "enquiry_reg_date": "2025-10-08",
+        "project_title": "Testing_Log_no_concurrency",
+        "log_category": 3,
+        "description": "ScopeChange 49",
+        "is_eoi": false,
+        "enquiry_type": 1,
+        "priority": 2,
+        "approver": null,
+        "log_no": "CP250014-117",
+        "customer_id": 182,
+        "client_id": 1,
+        "customer_reference": "dddrthrthrhrhrthrt",
+        "local_company": null,
+        "tender_no": "TENDER99999",
+        "country_code": 2,
+        "region": "dafa",
+        "received_date": "2025-10-07",
+        "last_date": "2025-10-11",
+        "estimation_coordinator": 1,
+        "proposal_engineer": 1,
+        "status": 1,
+        "remarks": "rdddr",
+        "sales_engineer": 1,
+        "customer_contacts": [76],
+        "customer_contact_default": 76,
+        "logIncrementId": null,
+        "log_no_increment_id": -1,
+        "scopes": [35, 38, 39],
+        "scope_number": 118,
+        "followup_watchers": [1, 2, 3]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

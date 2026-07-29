@@ -1,0 +1,21 @@
+info:
+  name: Forward to Reviewer ( From Creator)
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{base}}/projects/2/purchase-request/2/consumable-allocation/forward-to-reviewer"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/json
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

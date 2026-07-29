@@ -1,0 +1,21 @@
+info:
+  name: subtask comments list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/projects/29/project-planning/sub-tasks/87/comments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n    \"comment\": \"asdsad\"\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

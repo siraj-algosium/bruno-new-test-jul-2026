@@ -1,0 +1,29 @@
+info:
+  name: update
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base}}/inventory-warehouses/2/zones/1/racks/1/shelves/6/bins/1"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Bin 1 rrrrr\",\r
+
+      \    \"description\":\"Desc\",\r
+
+      \    \"status\":true\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

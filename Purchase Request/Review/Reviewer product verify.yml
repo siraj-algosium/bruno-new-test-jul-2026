@@ -1,0 +1,24 @@
+info:
+  name: Reviewer product verify
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/1/products/239/reviewer-verify"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "is_review_verified": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

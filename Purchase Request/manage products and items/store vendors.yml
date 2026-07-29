@@ -1,0 +1,27 @@
+info:
+  name: store vendors
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{base}}/projects/purchase-request/vendors"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\" : \"test 3456\",\r
+
+      \    \"mobile\": \"234234234\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

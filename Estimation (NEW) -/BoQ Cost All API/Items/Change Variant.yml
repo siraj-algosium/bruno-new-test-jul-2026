@@ -1,0 +1,31 @@
+info:
+  name: Change Variant
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{base}}/boq-cost/items/9/change-variant"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":106,\r
+
+      \    \"estimation_boq_cost_id\":1,\r
+
+      \    \"item_id\":112,\r
+
+      \    \"item_variant_id\":134\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

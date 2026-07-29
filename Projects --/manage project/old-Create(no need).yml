@@ -1,0 +1,37 @@
+info:
+  name: old-Create(no need)
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/projects"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |
+      {
+          "project_title": "sample project name 1",
+          "project_manager": 1,
+          "description": "descriptions",
+          "enquiry_type": 1,
+          "customer_id": 1,
+          "country_id": 1,
+          "region" : "asd",
+          "entry_date" : "2025-01-01",
+          "last_date" : "2025-01-01",
+          "awarded_date" : "2025-01-01",
+          "po_value" : 23,
+          "po_currency_id" : 1
+      }
+
+          // "planning_creater" : 1
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

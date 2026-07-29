@@ -1,0 +1,42 @@
+info:
+  name: Mapping Enquiry
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base}}/enquiries/245/map-parent"
+  headers:
+    - name: Cache-Control
+      value: no-cache
+    - name: Postman-Token
+      value: <calculated when request is sent>
+    - name: Content-Type
+      value: application/json
+    - name: Content-Length
+      value: <calculated when request is sent>
+    - name: Host
+      value: <calculated when request is sent>
+    - name: User-Agent
+      value: PostmanRuntime/7.39.1
+    - name: Accept
+      value: "*/*"
+    - name: Accept-Encoding
+      value: gzip, deflate, br
+    - name: Connection
+      value: keep-alive
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "parent_enquiry_id": "182"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

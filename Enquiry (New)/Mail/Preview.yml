@@ -1,0 +1,18 @@
+info:
+  name: Preview
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/enquiries/609/mail/preview"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

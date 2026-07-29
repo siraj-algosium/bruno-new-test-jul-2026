@@ -1,0 +1,21 @@
+info:
+  name: store selected vendors in product
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/purchase-request/1/products/134/vendors"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r\n  \"vendor_ids\": [30]\r\n}\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

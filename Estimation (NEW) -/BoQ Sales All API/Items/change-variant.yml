@@ -1,0 +1,33 @@
+info:
+  name: change-variant
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/boq-sale/items/20/change-variant"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":4,\r
+
+      \    \"estimation_boq_sale_id\":2,\r
+
+      \    \"item_id\":4,\r
+
+      \    \"item_variant_id\":9\r
+
+      }"
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

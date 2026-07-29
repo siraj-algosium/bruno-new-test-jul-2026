@@ -1,0 +1,65 @@
+info:
+  name: list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/inventory-warehouses?name=co&location_id=&address&description&created_by&contact_person&created_at_start&created_at_end&sort_order=desc&sort_col=name"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: name
+      value: co
+      type: query
+    - name: location_id
+      value: ""
+      type: query
+    - name: store_location
+      value: India
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+    - name: address
+      value: ""
+      type: query
+    - name: description
+      value: ""
+      type: query
+    - name: created_by
+      value: ""
+      type: query
+    - name: contact_person
+      value: ""
+      type: query
+    - name: status
+      value: active
+      type: query
+      disabled: true
+    - name: created_at_start
+      value: ""
+      type: query
+    - name: created_at_end
+      value: ""
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: sort_col
+      value: name
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,24 @@
+info:
+  name: Forward to Approver ( From Reviewer)
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base}}/boq-creation/2/forward-to-approver"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":88
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

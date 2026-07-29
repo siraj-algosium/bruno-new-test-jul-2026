@@ -1,0 +1,24 @@
+info:
+  name: Project Approve/reject
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/projects/3/update-approve"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "is_approved": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

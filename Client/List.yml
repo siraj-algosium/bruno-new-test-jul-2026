@@ -1,0 +1,57 @@
+info:
+  name: List
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base}}/client?is_active=true&getAll=true"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: type
+      value: "1"
+      type: query
+      disabled: true
+    - name: third_party_address
+      value: add
+      type: query
+      disabled: true
+    - name: third_party_country
+      value: AMERICAN SAMOA
+      type: query
+      disabled: true
+    - name: email_address
+      value: ee
+      type: query
+      disabled: true
+    - name: contact_personName
+      value: jj
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+    - name: name
+      value: f
+      type: query
+      disabled: true
+    - name: sortOrder
+      value: asc
+      type: query
+      disabled: true
+    - name: sortCol
+      value: id
+      type: query
+      disabled: true
+    - name: getAll
+      value: "true"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

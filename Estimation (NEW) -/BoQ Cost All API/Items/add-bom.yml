@@ -1,0 +1,33 @@
+info:
+  name: add-bom
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{base}}/boq-cost/items"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":106,\r
+
+      \    \"estimation_boq_cost_id\":1,\r
+
+      \    \"type\":\"bom\",\r
+
+      \    \"bom_main_id\": 23,\r
+
+      \    \"structure_id\": 2\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

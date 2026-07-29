@@ -1,0 +1,24 @@
+info:
+  name: Forward to Reviewer ( From Creator)
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/boq-cost/1/forward-to-reviewer"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":106
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

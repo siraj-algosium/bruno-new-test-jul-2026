@@ -1,0 +1,26 @@
+info:
+  name: Delete
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{base}}/purchase-request/3/consumable-allocation/products/7/comments/14"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "comment_source" : "consumable_allocation"
+      }
+  auth:
+    type: bearer
+    token: 180|hpoWc8VrZUrg7byGfz1szUcrslCvMTIcbKAr9fwad404a6dd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

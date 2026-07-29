@@ -1,0 +1,47 @@
+info:
+  name: store
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/logcategory"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Test 1\",\r
+
+      \    \"code\":\"TT1\",\r
+
+      \    \"scopes\": [\r
+
+      \        {\r
+
+      \            \"id\": \"ID42909\",\r
+
+      \            \"name\": \"Scope 1\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"id\": \"ID42910\",\r
+
+      \            \"name\": \"Scope 2\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

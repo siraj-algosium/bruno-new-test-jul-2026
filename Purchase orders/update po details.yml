@@ -1,0 +1,41 @@
+info:
+  name: update po details
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{base}}/purchase-order/4"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"delivery_address\" : 1,\r
+
+      \    \"delivery_term\": 1,\r
+
+      \    \"expected_delivery_date\": \"22-11-2026\",\r
+
+      \    \"payment_term\":1,\r
+
+      \    \"currency\":1,\r
+
+      \    \"tax_percentage\":10,\r
+
+      \    \"terms_and_conditions\" : \"<p>test</p>\",\r
+
+      \    \"include_terms_conditions_in_attachment\": true,\r
+
+      \    \"remarks\": \"ghhhh\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

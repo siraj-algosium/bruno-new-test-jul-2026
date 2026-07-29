@@ -1,0 +1,51 @@
+info:
+  name: Store - EOI
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/enquiries"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+        "is_eoi":true,
+        "enquiry_type": 1,
+        "log_category": 1,
+        //"priority": 1,
+        "approver":1,
+
+        "customer_id": 1,
+        "client_id": "", //optional
+        "customer_reference": "ddddd0",
+        "customer_contacts":[1,2],
+
+        "project_title": "tesaasss",
+        //"tender_no": "",
+        "description": "ddddd",
+        "country_code": , //optional
+        "region": "", //optional
+
+        //"received_date": "2024-04-23",
+        //"last_date": "2001-01-02",
+        "next_followup_date": "2025-05-06",//optional
+        "follow_up_person": 35,//optional
+
+        //"estimation_coordinator": 1,
+        //"proposal_engineer": 1,
+        "sales_engineer": 1,
+        
+        "remarks": "rdddr",//optional
+        "attachments":null //optional
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

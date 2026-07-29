@@ -1,0 +1,27 @@
+info:
+  name: first reviewer update
+  type: http
+  seq: 18
+
+http:
+  method: POST
+  url: "{{base}}/rfq/9/quotation/update-status/first-review"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"is_reviewed\": 1\r
+
+      }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

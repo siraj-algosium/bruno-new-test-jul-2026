@@ -1,0 +1,31 @@
+info:
+  name: Store
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/customer/contactPerson"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+        "name":"testname 1",
+        "contactNumber":"12345678",
+        "designation": "3",
+        "new_designation": "",
+        "customer_id": 2064,
+        "extension": "91",
+        "email": "ven@gmail.com",
+        "mobileNumber": "9898988888"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

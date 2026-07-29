@@ -1,0 +1,18 @@
+info:
+  name: Delete Business Category Group
+  type: http
+  seq: 7
+
+http:
+  method: DELETE
+  url: "{{base}}/business-category-groups/1"
+  headers:
+    - name: branch
+      value: "{{branch_id}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

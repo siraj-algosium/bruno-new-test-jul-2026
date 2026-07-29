@@ -1,0 +1,23 @@
+info:
+  name: Store
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/structure"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"Office314"
+      }
+  auth:
+    type: bearer
+    token: Q7Uvwdcc9NsWzU29O2gU2tE5CNU0UHc4XKx0Y6Nt7603bbfd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

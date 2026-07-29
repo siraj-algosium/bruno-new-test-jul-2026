@@ -1,0 +1,46 @@
+info:
+  name: Item Listing
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/projects/2/purchase-request/1/items"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: page
+      value: "2"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "1"
+      type: query
+      disabled: true
+    - name: code
+      value: "2"
+      type: query
+      disabled: true
+    - name: name
+      value: "2"
+      type: query
+      disabled: true
+    - name: description
+      value: 2 p
+      type: query
+      disabled: true
+    - name: structure_name
+      value: te
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

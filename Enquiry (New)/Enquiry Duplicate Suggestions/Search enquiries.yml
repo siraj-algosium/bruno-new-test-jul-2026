@@ -1,0 +1,27 @@
+info:
+  name: Search enquiries
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/matched-list"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+        "project_title": "mmm",
+        "client_id": 23,//Siraj
+        "enquiry_type": 1,//Project
+        "log_category": 8 //Automation Division
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

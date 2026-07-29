@@ -1,0 +1,24 @@
+info:
+  name: Add Comment
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{base}}/contract-reviews/158/comments"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "comment": "custom comment 1"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

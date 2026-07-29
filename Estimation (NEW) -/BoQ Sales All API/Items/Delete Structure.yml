@@ -1,0 +1,27 @@
+info:
+  name: Delete Structure
+  type: http
+  seq: 14
+
+http:
+  method: DELETE
+  url: "{{base}}/boq-sale/structures/1"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":4,
+          "estimation_boq_sale_id":16
+      }
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

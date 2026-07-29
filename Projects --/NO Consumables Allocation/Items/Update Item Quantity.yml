@@ -1,0 +1,24 @@
+info:
+  name: Update Item Quantity
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{base}}/projects/2/purchase-request/2/products/163/consumables/383"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "quantity":55
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

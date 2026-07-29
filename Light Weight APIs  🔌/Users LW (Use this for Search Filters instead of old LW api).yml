@@ -1,0 +1,55 @@
+info:
+  name: Users LW (Use this for Search Filters instead of old LW api)
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{base}}/usersLW?page=1&per_page&permission_filter=enquiry.list&is_active=true&permission_filter=compare_quotation.first_reviewer"
+  headers:
+    - name: Branch
+      value: "11"
+    - name: Accept
+      value: application/ecmascript
+  params:
+    - name: name
+      value: CP
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+    - name: per_page
+      value: ""
+      type: query
+    - name: exclude_ids
+      value: "3"
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: enquiry.list
+      type: query
+      description: |-
+        enquiry.list
+        enquiry.proposal-engineer
+        enquiry.sales-engineer
+        estimation.estimation-coordinator
+        project.project-manager
+        follow-up.list
+    - name: is_active
+      value: "true"
+      type: query
+    - name: permission_filter
+      value: warehouse-setup.edit
+      type: query
+      disabled: true
+    - name: permission_filter
+      value: compare_quotation.first_reviewer
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,32 @@
+info:
+  name: Update Saved Filter
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base}}/dashboard/saved-filters/3"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: branch
+      value: "{{branch_id}}"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "My Saved Filter Updated",
+        "filters": {
+          "project_title": { "filter_type": "include", "value": "t" },
+          "priority": { "filter_type": "include", "values": ["pending", "awarded"] }
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

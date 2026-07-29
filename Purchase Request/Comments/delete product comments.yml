@@ -1,0 +1,21 @@
+info:
+  name: delete product comments
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{base}}/projects/1/purchase-request/1/products/16/comments/64"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,30 @@
+info:
+  name: Create
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/followUp"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+         "subject":1,
+         "remark":"rrr",
+         "next_date":"2024-08-30",
+        "reminder_date":"2024-08-31",
+        "enquiry_id":379
+      }
+  auth:
+    type: bearer
+    token: ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

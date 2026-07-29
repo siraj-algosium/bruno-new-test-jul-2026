@@ -1,0 +1,30 @@
+info:
+  name: Store
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/boq-sale"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "enquiry_id":"420",
+          "prepared_by":1,
+          "reviewer":1,
+          "approver":1,
+          "team_leader":1,
+          "due_date":"2025-05-01",
+          "internal_revision":""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

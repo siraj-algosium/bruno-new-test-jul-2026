@@ -1,0 +1,168 @@
+info:
+  name: Details
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{base}}/purchase-request/55/material-booking"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  ## Get Material Booking Details
+
+  This endpoint retrieves the material booking details associated with a specific purchase request. It provides comprehensive information about the project, purchase request, and material booking.
+
+  ### Request
+
+  - **Method:** GET
+      
+  - **Endpoint:** `{{base}}/purchase-request/{id}/material-booking`
+      
+  - **Path Parameters:**
+      
+      - `id` (integer): The unique identifier of the purchase request for which material booking details are being requested.
+          
+
+  ### Response
+
+  - **Status Code:** 200 OK
+      
+  - **Content-Type:** application/json
+      
+
+  #### Response Body
+
+  The response body contains a JSON object with the following structure:
+
+  ``` json
+  {
+    "success": true,
+    "data": {
+      "project_details": {
+        "project_code": "",
+        "project_title": "",
+        "project_status": ""
+      },
+      "purchase_request_details": {
+        "code": "",
+        "status": ""
+      },
+      "material_booking_details": {
+        "id": 0,
+        "code": "",
+        "status": ""
+      }
+    },
+    "message": ""
+  }
+
+   ```
+
+  - **success** (boolean): Indicates whether the request was successful.
+      
+  - **data** (object): Contains detailed information about:
+      
+      - **project_details** (object): Information about the project related to the purchase request.
+          
+          - `project_code` (string): The code of the project.
+              
+          - `project_title` (string): The title of the project.
+              
+          - `project_status` (string): The current status of the project.
+              
+      - **purchase_request_details** (object): Information about the purchase request.
+          
+          - `code` (string): The code of the purchase request.
+              
+          - `status` (string): The current status of the purchase request.
+              
+      - **material_booking_details** (object): Information about the material booking.
+          
+          - `id` (integer): The unique identifier of the material booking.
+              
+          - `code` (string): The code of the material booking.
+              
+          - `status` (string): The current status of the material booking.
+              
+  - **message** (string): A message providing additional context about the request.
+      
+
+  This endpoint is useful for obtaining a detailed view of the material booking associated with a specific purchase request, allowing users to track the status and details of their projects and requests effectively.
+
+  This endpoint allows you to retrieve material booking details associated with a specific purchase request.
+
+  - **Method**: GET
+      
+  - **Endpoint**: `{{base}}/purchase-request/{id}/material-booking`
+      
+      - Replace `{id}` with the purchase request ID (in this case, `3`).
+          
+
+  #### Expected Response
+
+  On a successful request, the server will respond with a status code of `200` and a JSON object containing the following structure:
+
+  ``` json
+  {
+    "success": true,
+    "data": {
+      "project_details": {
+        "project_code": "",
+        "project_title": "",
+        "project_status": ""
+      },
+      "purchase_request_details": {
+        "code": "",
+        "status": ""
+      },
+      "material_booking_details": {
+        "id": 0,
+        "code": "",
+        "status": ""
+      }
+    },
+    "message": ""
+  }
+
+   ```
+
+  - **success**: A boolean indicating the success of the request.
+      
+  - **data**: An object containing:
+      
+      - **project_details**: Information about the project related to the purchase request, including:
+          
+          - `project_code`: The code of the project.
+              
+          - `project_title`: The title of the project.
+              
+          - `project_status`: The current status of the project.
+              
+      - **purchase_request_details**: Information about the purchase request, including:
+          
+          - `code`: The code of the purchase request.
+              
+          - `status`: The current status of the purchase request.
+              
+      - **material_booking_details**: Information about the material booking, including:
+          
+          - `id`: The unique identifier for the material booking.
+              
+          - `code`: The code associated with the material booking.
+              
+          - `status`: The current status of the material booking.
+              
+  - **message**: A string for any additional messages or information.
+      
+
+  This endpoint is useful for obtaining detailed information about the material booking related to a specific purchase request.

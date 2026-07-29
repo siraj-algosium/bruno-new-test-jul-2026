@@ -1,0 +1,18 @@
+info:
+  name: rfq items and products remove Copy
+  type: http
+  seq: 15
+
+http:
+  method: DELETE
+  url: "{{base}}/rfq/1/items-and-products/6"
+  headers:
+    - name: branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

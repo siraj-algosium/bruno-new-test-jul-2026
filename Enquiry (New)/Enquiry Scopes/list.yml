@@ -1,0 +1,35 @@
+info:
+  name: list
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/log-categories/60/enquiry-scopes"
+  headers:
+    - name: Branch
+      value: "11"
+  params:
+    - name: getAll
+      value: "true"
+      type: query
+      disabled: true
+    - name: name
+      value: "1"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: per_page
+      value: "10"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

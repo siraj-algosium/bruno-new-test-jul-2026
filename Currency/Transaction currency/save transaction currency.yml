@@ -1,0 +1,29 @@
+info:
+  name: save transaction currency
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/transaction-currency"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"global_currency_id\" : 154,\r
+
+      \    \"decimal_precision\" : 1,\r
+
+      \    \"rounding_method\" : \"up\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,25 @@
+info:
+  name: delete item comments
+  type: http
+  seq: 10
+
+http:
+  method: DELETE
+  url: "{{base}}/projects/1/purchase-request/1/items/72/comments/71"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\":\"hi test comment 555\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

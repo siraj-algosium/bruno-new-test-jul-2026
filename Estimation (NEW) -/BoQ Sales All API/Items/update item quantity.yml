@@ -1,0 +1,29 @@
+info:
+  name: update item quantity
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{base}}/boq-sale/items/11/quantity"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":4,\r
+
+      \    \"estimation_boq_sale_id\":\"2\",\r
+
+      \    \"quantity\":5\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

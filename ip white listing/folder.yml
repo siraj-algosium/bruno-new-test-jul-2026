@@ -1,0 +1,7 @@
+info:
+  name: ip white listing
+  type: folder
+  seq: 52
+
+request:
+  auth: inherit

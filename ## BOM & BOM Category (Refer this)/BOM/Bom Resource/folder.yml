@@ -1,0 +1,7 @@
+info:
+  name: Bom Resource
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

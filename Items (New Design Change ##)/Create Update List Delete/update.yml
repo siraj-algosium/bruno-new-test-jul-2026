@@ -1,0 +1,35 @@
+info:
+  name: update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base}}/items/1"
+  headers:
+    - name: Branch
+      value: "1"
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Item 111\",\r
+
+      \    \"type\":\"Service\",\r
+
+      \    \"item_category_id\":2,\r
+
+      \    \"uom_id\":6,\r
+
+      \    \"batch_wise_booking\":true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

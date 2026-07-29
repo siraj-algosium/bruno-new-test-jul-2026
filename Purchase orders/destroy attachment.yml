@@ -1,0 +1,31 @@
+info:
+  name: destroy attachment
+  type: http
+  seq: 17
+
+http:
+  method: DELETE
+  url: "{{base}}/purchase-order/3/attachments/1"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: multipart-form
+    data:
+      - name: type
+        type: text
+        value: test
+      - name: file_display_name
+        type: text
+        value: test
+      - name: attachment
+        type: file
+        value:
+          - postman-cloud:///1f02bd58-6fc3-4770-919f-b616d7f3f32e
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

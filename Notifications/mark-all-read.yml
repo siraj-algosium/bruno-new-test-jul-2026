@@ -1,0 +1,20 @@
+info:
+  name: mark-all-read
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base}}/notifications/mark-all-read"
+  headers:
+    - name: branch
+      value: "1"
+  auth:
+    type: bearer
+    token: 2299|Pwg4GQbMQjb413kAM4T3r2zgUIsehh7ncFwMFUYp02c2a4a0
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

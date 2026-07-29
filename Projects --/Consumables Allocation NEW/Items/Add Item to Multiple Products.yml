@@ -1,0 +1,29 @@
+info:
+  name: Add Item to Multiple Products
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base}}/purchase-request/3/consumable-allocation/products/add-item"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"item_id\":5,\r
+
+      \    \"item_variant_id\":10,\r
+
+      \    \"product_ids\":[7,8]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,31 @@
+info:
+  name: closing enquiry with Reward
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/40725/close"
+  headers:
+    - name: Branch
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+        "priority_id": 202,
+        "closing_remark": "Test",//mandadory
+        "po_value": "999999999999.99",//mandadory for  status = 3
+        "po_currency_id": "5",//mandadory for  status = 3
+        "project_manager": 1,//mandadory for  status = 3
+        "awarded_date":"13-05-2025",
+        "quote_value":"5555.00",//mandatory for status = 3
+        "quote_currency":1//mandatory for status = 3
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,63 @@
+info:
+  name: Reject
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{base1}}/buyout-requests/19/reject"
+  headers:
+    - name: branch
+      value: "1"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"reject_remark\": \"test\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  **Purpose:**  
+  Retrieves a list of buyout requests from the system. This endpoint supports filtering using various parameters, allowing users to fetch buyout requests based on specific criteria such as buyout ID, project, purchase request, revision, BOM, item, item variant, and date range.
+
+  **Endpoint:**  
+  `GET {{base1}}/buyout-requests`
+
+  **Headers:**
+
+  - `branch` (required): Branch identifier. Example: `1`
+      
+
+  **Expected Response:**  
+  A successful response returns a JSON object containing the list of buyout requests matching the filters. The structure typically includes:
+
+  - `success` (boolean): Indicates if the request was successful.
+      
+  - `data` (object): Contains the records and pagination info.
+      
+      - `records` (array): List of buyout request objects.
+          
+      - `pagination` (object): Pagination details (if applicable).
+          
+  - `message` (string): Informational message.
+      
+
+  **Notes:**
+
+  - The `branch` header is required for the request to succeed.
+      
+  - All filter parameters in the body are optional and can be combined as needed.
+      
+  - Ensure the `base1` variable is set in your environment to the root URL of the API.
+      
+
+  **Typical Usage:**  
+  Use this endpoint to list and filter buyout requests for reporting, auditing, or operational workflows.

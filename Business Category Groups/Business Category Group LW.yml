@@ -1,0 +1,31 @@
+info:
+  name: Business Category Group LW
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/businessCategoryGroupsLW?per_page=30&exclude_mapped_for_branch_id=11"
+  headers:
+    - name: branch
+      value: "{{branch_id}}"
+    - name: Accept
+      value: application/json
+  params:
+    - name: per_page
+      value: "30"
+      type: query
+    - name: name
+      value: ano
+      type: query
+      disabled: true
+    - name: exclude_mapped_for_branch_id
+      value: "11"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

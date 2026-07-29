@@ -1,0 +1,24 @@
+info:
+  name: Project Review/revert
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base}}/projects/2/purchase-request/1/update-review"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "is_reviewed": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

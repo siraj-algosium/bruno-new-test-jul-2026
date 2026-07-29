@@ -1,0 +1,25 @@
+info:
+  name: Import
+  type: http
+  seq: 18
+
+http:
+  method: POST
+  url: "{{base}}/import-items"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/sreyas/Downloads/cable_attribute_valuesv10 (1).xlsx
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

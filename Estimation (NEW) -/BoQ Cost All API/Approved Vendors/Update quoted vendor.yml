@@ -1,0 +1,24 @@
+info:
+  name: Update quoted vendor
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base}}/boq-cost/items/182/vendors/quoted"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "name":"Sreyas P P"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

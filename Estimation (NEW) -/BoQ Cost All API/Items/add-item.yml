@@ -1,0 +1,37 @@
+info:
+  name: add-item
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base}}/boq-cost/items"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"estimation_id\":106,\r
+
+      \    \"estimation_boq_cost_id\":1,\r
+
+      \    \"item_id\":112,\r
+
+      \    \"item_variant_id\":134,\r
+
+      \    \"type\":\"item\",\r
+
+      \    \"bom_main_id\": null,\r
+
+      \    \"structure_id\": null\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

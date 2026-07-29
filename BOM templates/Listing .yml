@@ -1,0 +1,36 @@
+info:
+  name: "Listing "
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base}}/bom-templates?bom_category_name=Elect"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: getAll
+      value: "true"
+      type: query
+      disabled: true
+    - name: name
+      value: "1"
+      type: query
+      disabled: true
+    - name: description
+      value: test
+      type: query
+      disabled: true
+    - name: bom_category_name
+      value: Elect
+      type: query
+  auth:
+    type: bearer
+    token: 2540|5wGsNjlJpMYTgDuStx4xzRIU3Ax34jcSyfXAutoTe21508f1
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

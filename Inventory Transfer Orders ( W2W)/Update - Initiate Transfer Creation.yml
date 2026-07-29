@@ -1,0 +1,25 @@
+info:
+  name: Update - Initiate Transfer Creation
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{base}}/inventory-transfer-orders/1"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"dest_warehouse_id\":16\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

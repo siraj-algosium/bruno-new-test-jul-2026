@@ -1,0 +1,25 @@
+info:
+  name: Resolve
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base}}/boq-cost/items/23/comments/resolve"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "estimation_id":106,
+          "estimation_boq_cost_id":1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

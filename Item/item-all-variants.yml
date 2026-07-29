@@ -1,0 +1,46 @@
+info:
+  name: item-all-variants
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{base}}/item-all-variants/?sort_col=item_category_name"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: sort_col
+      value: item_category_name
+      type: query
+      description: type, item_category_name, item_code, item_name, variant_code, variant_description, uom, created_at, status
+    - name: sort_order
+      value: asc
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \  \"attribute\": {\r
+
+      \    \"75\": 205,\r
+
+      \    \"76\":206,\r
+
+      \    \"77\":207\r
+
+      \  }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

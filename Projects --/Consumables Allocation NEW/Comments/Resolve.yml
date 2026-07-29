@@ -1,0 +1,20 @@
+info:
+  name: Resolve
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base}}/purchase-request/3/consumable-allocation/products/8/comments/resolve"
+  headers:
+    - name: Branch
+      value: "1"
+  auth:
+    type: bearer
+    token: 15|WRFLA9LAyFKSE9wv6MsjiLB12KjNVFvbPltbJc3e97eb0fd2
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

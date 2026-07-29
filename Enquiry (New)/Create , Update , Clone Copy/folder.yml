@@ -1,0 +1,7 @@
+info:
+  name: Create , Update , Clone Copy
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit

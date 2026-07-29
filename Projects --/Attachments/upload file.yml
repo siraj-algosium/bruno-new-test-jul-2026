@@ -1,0 +1,34 @@
+info:
+  name: upload file
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/projects/2/attachments"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: multipart-form
+    data:
+      - name: attachment
+        type: file
+        value:
+          - /C:/Users/sreyas/Pictures/Screenshots/Screenshot 2025-03-13 145320.png
+      - name: file_display_name
+        type: text
+        value: custom file namesss
+      - name: estimation_id
+        type: text
+        value: "1"
+      - name: type
+        type: text
+        value: documenty tyep
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

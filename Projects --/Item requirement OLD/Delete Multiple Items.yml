@@ -1,0 +1,24 @@
+info:
+  name: Delete Multiple Items
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{base}}/projects/2/items/destroyMultipleItems"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: |-
+      {
+          "project_item_ids":[51]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

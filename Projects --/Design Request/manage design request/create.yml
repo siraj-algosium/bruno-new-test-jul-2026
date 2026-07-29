@@ -1,0 +1,39 @@
+info:
+  name: create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base}}/project_design_request"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"project_id\":1,\r
+
+      \    \"name\":\"test 8\",\r
+
+      \    \"description\" : \"asd\",\r
+
+      \    \"assigned_date\" : \"2024-11-11\",\r
+
+      \    \"due_date\" : \"2024-11-11\",\r
+
+      \r
+
+      \    \"comments\" : \"dfg sgfd dfg dfg\",\r
+
+      \    \"designers\" : [1,2,3]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

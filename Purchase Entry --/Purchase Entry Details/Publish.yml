@@ -1,0 +1,18 @@
+info:
+  name: Publish
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{base}}/purchase-entry/3/submit"
+  headers:
+    - name: Branch
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

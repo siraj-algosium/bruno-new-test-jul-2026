@@ -1,0 +1,20 @@
+info:
+  name: Remove One Business Category Group Mapping
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{base}}/branch/1/business-category-groups/1"
+  headers:
+    - name: branch
+      value: "{{branch_id}}"
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

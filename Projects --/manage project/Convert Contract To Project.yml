@@ -1,0 +1,48 @@
+info:
+  name: Convert Contract To Project
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{base}}/projects/convertContractToProject/410"
+  headers:
+    - name: branch
+      value: "11"
+  params:
+    - name: start_date
+      value: ""
+      type: query
+      disabled: true
+    - name: end_date
+      value: ""
+      type: query
+      disabled: true
+    - name: scope_of_work
+      value: "30"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"project_name\": \"sample project name\",\r
+
+      \    \"project_manager\": 1,\r
+
+      \    \"description\": \"descriptions\",\r
+
+      \    \"start_date\": \"2025-01-01\",\r
+
+      \    \"end_date\": \"2025-12-12\",\r
+
+      \    \"scope_of_work\": \"test scope\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

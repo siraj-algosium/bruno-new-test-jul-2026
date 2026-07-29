@@ -1,0 +1,18 @@
+info:
+  name: Send
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/enquiries/455/mail/send"
+  headers:
+    - name: Branch
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

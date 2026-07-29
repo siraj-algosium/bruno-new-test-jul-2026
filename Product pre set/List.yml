@@ -1,0 +1,38 @@
+info:
+  name: List
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base}}/productPreset"
+  params:
+    - name: createdByName
+      value: Ad
+      type: query
+      disabled: true
+    - name: created_at_start
+      value: 2024-09-23
+      type: query
+      disabled: true
+    - name: created_at_end
+      value: 2024-09-25
+      type: query
+      disabled: true
+    - name: name
+      value: asdasd
+      type: query
+      disabled: true
+    - name: type
+      value: Service
+      type: query
+      disabled: true
+  auth:
+    type: bearer
+    token: Q7Uvwdcc9NsWzU29O2gU2tE5CNU0UHc4XKx0Y6Nt7603bbfd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

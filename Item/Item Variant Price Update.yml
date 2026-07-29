@@ -1,0 +1,24 @@
+info:
+  name: Item Variant Price Update
+  type: http
+  seq: 17
+
+http:
+  method: POST
+  url: "{{base}}/itemVariantPriceUpdate/84"
+  body:
+    type: json
+    data: |-
+      {
+          "currency_id":"1",
+          "price":"101.00"
+      }
+  auth:
+    type: bearer
+    token: ZvXg0cIWiwMzGafIu7o1NyVES5JldCtyAe6nj1axc2dd9482
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

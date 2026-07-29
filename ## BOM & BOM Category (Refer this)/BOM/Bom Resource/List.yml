@@ -1,0 +1,30 @@
+info:
+  name: List
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base}}/boms?items=red"
+  headers:
+    - name: Branch
+      value: "1"
+  params:
+    - name: name
+      value: ""
+      type: query
+      disabled: true
+    - name: bom_category_name
+      value: Template Category 3.2
+      type: query
+      disabled: true
+    - name: items
+      value: red
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

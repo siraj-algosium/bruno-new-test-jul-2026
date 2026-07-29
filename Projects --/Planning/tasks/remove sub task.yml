@@ -1,0 +1,21 @@
+info:
+  name: remove sub task
+  type: http
+  seq: 8
+
+http:
+  method: DELETE
+  url: "{{base}}/projects/26/project-planning/sub-tasks/13"
+  headers:
+    - name: branch
+      value: "11"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

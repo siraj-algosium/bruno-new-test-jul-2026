@@ -1,0 +1,27 @@
+info:
+  name: Store - Main Task
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base}}/project-master/main-tasks"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\":\"Main Task 2\",\r
+
+      \    \"weightage\":\"10\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

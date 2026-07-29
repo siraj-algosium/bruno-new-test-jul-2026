@@ -1,0 +1,31 @@
+info:
+  name: Store (With Draft Status) product
+  type: http
+  seq: 24
+
+http:
+  method: POST
+  url: "{{base}}/boms"
+  headers:
+    - name: Branch
+      value: "11"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"Product New Design 11\",\r
+
+      \  \"bom_template_id\": 17,\r
+
+      \  \"purchase_request_id\": 1,\r
+
+      \  \"structure_id\": 1\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
