@@ -1,7 +1,7 @@
 info:
-  name: sample for gitrepo
+  name: sample for gitrepo copy
   type: http
-  seq: 3
+  seq: 2
 
 http:
   method: GET
