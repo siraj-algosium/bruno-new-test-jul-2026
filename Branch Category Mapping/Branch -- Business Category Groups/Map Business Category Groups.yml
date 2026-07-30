@@ -17,7 +17,7 @@ http:
     type: json
     data: |-
       {
-        "business_category_group_ids": [2, 3,4]
+        "business_category_group_ids": [2, 3,4,5]
       }
   auth: inherit
 
