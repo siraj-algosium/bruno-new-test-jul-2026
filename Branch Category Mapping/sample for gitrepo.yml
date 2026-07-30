@@ -5,7 +5,12 @@ info:
 
 http:
   method: GET
-  url: https://www.google.com/
+  url: "https://www.google.com?test=one "
+  params:
+    - name: test
+      value: "one "
+      type: query
+      description: two
   auth: inherit
 
 settings:
