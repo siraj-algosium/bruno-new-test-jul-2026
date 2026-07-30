@@ -38,3 +38,11 @@ extensions:
     ignore:
       - node_modules
       - .git
+    gitSync:
+      enabled: true
+      branch: main
+      autoPull: true
+      autoPullInterval: 5
+      autoCommit: true
+      autoCommitDebounceSeconds: 30
+      autoPush: true
