@@ -17,7 +17,7 @@ http:
     type: json
     data: |-
       {
-        "business_category_group_ids": [2, 3]
+        "business_category_group_ids": [2, 3,4]
       }
   auth: inherit
 
@@ -26,3 +26,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
