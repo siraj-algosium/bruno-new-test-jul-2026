@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: https://www.google.com?test=two&test=one&three=three
+  url: https://www.google.com?test=two&test=one&three=three&four=hh
   params:
     - name: test
       value: two
@@ -15,6 +15,9 @@ http:
       type: query
     - name: three
       value: three
+      type: query
+    - name: four
+      value: hh
       type: query
   auth: inherit
 
